@@ -15,9 +15,9 @@
       <nav>
       <% if admin_signed_in? %>
         <p> Olá <%= current_admin.email %></p>
-        <%= link_to "Sair", root_path %>
+        <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
       <% else%>
-        <%= link_to "Área do Admin", new_admin_session_path %>
+        <%= link_to "Área do Admin", new_admin_session_path %> |
       <% end %>
       </nav>
     </header>
