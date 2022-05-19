@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DeliverySystem</title>
+    <title> DeliverySystem </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1> Sistema de Entregas </h1>
+    </header>
+    <main>
+      <div>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+      </div>
+      <%= yield %>
+    </main>
   </body>
 </html>
