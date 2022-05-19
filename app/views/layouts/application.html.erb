@@ -12,6 +12,14 @@
   <body>
     <header>
       <h1> Sistema de Entregas </h1>
+      <nav>
+      <% if admin_signed_in? %>
+        <p> Olá <%= current_admin.email %></p>
+        <%= link_to "Sair", root_path %>
+      <% else%>
+        <%= link_to "Área do Admin", new_admin_session_path %>
+      <% end %>
+      </nav>
     </header>
     <main>
       <div>
