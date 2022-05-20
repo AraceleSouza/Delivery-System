@@ -17,7 +17,7 @@
         <p> Olá <%= current_admin.email %></p>
         <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
       <% else%>
-        <%= link_to "Área do Admin", new_admin_session_path %> |
+        <%= link_to "Entrar", new_admin_session_path %> |
       <% end %>
       </nav>
     </header>
