@@ -27,20 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_20_015505) do
     t.string "fantasy_name"
     t.string "corporate_name"
     t.string "email"
-    t.integer "CNPJ"
+    t.string "cnpj"
     t.string "address"
     t.string "city"
     t.string "state"
-    t.integer "CEP"
+    t.string "cep"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
 end

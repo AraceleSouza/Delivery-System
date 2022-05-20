@@ -1,0 +1,20 @@
+<section>
+<h2>Transportadoras</h2>
+
+<% if @shipping_companies.any? %>
+
+  <% @shipping_companies.each do |s| %>
+  <div>
+      <dl>
+        <dt>Transportadora: </dt><dd><%= s.fantasy_name %></dd>
+        <dt>CNPJ: </dt><dd><%= s.cnpj %></dd>
+        <dt>Localização: </dt><dd><%= s.city %> - <%= s.state %></dd> 
+      </dl>
+    </div>  
+  <% end %>
+
+<% else %>
+  <p>Não existem transportadoras cadastradas.</p>
+<% end %>
+
+</section>

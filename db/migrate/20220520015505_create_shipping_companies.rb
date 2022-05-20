@@ -4,11 +4,11 @@ class CreateShippingCompanies < ActiveRecord::Migration[7.0]
       t.string :fantasy_name
       t.string :corporate_name
       t.string :email
-      t.integer :CNPJ
+      t.string :cnpj
       t.string :address
       t.string :city
       t.string :state
-      t.integer :CEP
+      t.string :cep
 
       t.timestamps
     end
