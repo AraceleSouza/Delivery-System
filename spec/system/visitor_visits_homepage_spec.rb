@@ -10,5 +10,4 @@ describe 'visitor visits home page' do
       expect(page).to have_content 'Sistema de Entregas'
   end
 
-  
 end
