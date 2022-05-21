@@ -1,0 +1,16 @@
+<h1>Detalhes da transportadora: </h1>
+<div>
+<strong>Nome Fantasia:</strong> <%= @shipping_company.fantasy_name %>
+<strong>Razão Social:</strong> <%= @shipping_company.corporate_name %>
+<strong>CNPJ:</strong> <%= @shipping_company.cnpj %>
+<strong>E-mail:</strong> <%= @shipping_company.email %>
+<strong>Endereço:</strong> <%= @shipping_company.address %>
+<strong>Cidade:</strong> <%= @shipping_company.city %>
+<strong>Estado:</strong> <%= @shipping_company.state %>
+<strong>CEP:</strong> <%= @shipping_company.cep %>
+</div>
+
+<div>
+<%= link_to 'Voltar', shipping_companies_path %> 
+</div>
+

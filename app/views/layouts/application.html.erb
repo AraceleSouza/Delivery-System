@@ -13,9 +13,9 @@
     <header>
       <h1> Sistema de Entregas </h1>
       <nav>        
-        <%= link_to 'Transportadoras', shipping_companies_path %>
         <% if admin_signed_in? %>
         Olá <%= current_admin.email %>
+        <%= link_to 'Transportadoras', shipping_companies_path %>
         <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
         <% else%>
         <%= link_to "Área Admin", new_admin_session_path %> | 
