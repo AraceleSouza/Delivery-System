@@ -1,6 +1,10 @@
 <section>
 <h2>Transportadoras</h2>
 
+<div>
+<%= link_to('Cadastrar Transportadora', new_shipping_company_path)%>
+</div>
+
 <% if @shipping_companies.any? %>
 
   <% @shipping_companies.each do |s| %>
