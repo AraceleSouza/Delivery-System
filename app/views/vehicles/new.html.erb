@@ -1,0 +1,41 @@
+<h2>Novo Veículo</h2>
+
+<% if (@vehicle.errors.any?) %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @vehicle.errors.full_messages.each do |msg| %>
+    <li><%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: [@shipping_company, @vehicle]) do |f| %>
+  <div>
+    <%= f.label :model, 'Modelo'%>
+    <%= f.text_field :model %>
+  </div>
+
+  <div>
+    <%= f.label :brand, 'Marca' %>
+    <%= f.text_field :brand %>
+  </div>
+
+  <div>
+    <%= f.label :plate, 'Placa' %>
+    <%= f.text_field :plate %>
+  </div>
+
+  <div>
+    <%= f.label :year_fabrication, 'Ano de Fabricação'%>
+    <%= f.text_field :year_fabrication %>
+  </div>
+
+  <div>
+    <%= f.label :freight, 'Capacidade Máxima' %>
+    <%= f.text_field :freight %>
+  </div>
+
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>

@@ -2,6 +2,10 @@
 
 <h2>Veículos</h2>
 
+<div>
+  <%= link_to 'Cadastrar Veículo', new_shipping_company_vehicle_path(@shipping_company.id) %>
+</div>
+
 <% if @vehicles.any? %>
 
   <% @vehicles.each do |vehicle| %>

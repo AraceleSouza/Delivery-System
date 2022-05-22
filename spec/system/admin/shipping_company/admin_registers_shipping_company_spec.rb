@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User registers a carrier' do
+describe 'Admin registers a shipping company' do
   it 'from home screen' do
   # Arrange
   admin = Admin.create!(email: 'aracele@email.com', password: 'password')

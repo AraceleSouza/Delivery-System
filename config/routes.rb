@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :admins
   root to: 'home#index'
   resources :shipping_companies, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :vehicles, only: [:index, :show]
+    resources :vehicles, only: [:index, :show, :new, :create]
   end
   
 end
