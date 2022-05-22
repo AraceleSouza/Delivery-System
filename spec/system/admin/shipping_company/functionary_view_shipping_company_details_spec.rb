@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'Funcionario vê detalhes da sua transportadora' do
-  it 'com sucesso' do
+describe 'Functionary sees details of your shipping company' do
+  it 'successfully' do
   # Arrange
   shipping_company = ShippingCompany.create!(corporate_name: 'Solution LTDA', fantasy_name: 'Solution', 
                                           email: 'transporte@solution.com', cnpj: '55385612000163', 
