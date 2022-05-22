@@ -133,7 +133,7 @@ RSpec.describe ShippingCompany, type: :model do
       shipping_company = ShippingCompany.new(corporate_name: 'Solution LTDA', fantasy_name: 'Solution', 
                                                        email: 'transporte@solution.com.br', cnpj: '55385612000163', 
                                                        address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
-                                                       state:'BA' , cep: '41180-625' )
+                                                       state:'BA' , cep: '41162-51' )
       # Act
       result = shipping_company.valid?
       # Assert
