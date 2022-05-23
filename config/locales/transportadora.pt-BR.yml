@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      shipping_company: 'Transportadora'
+    attributes:
+      shipping_company:
+        corporate_name: 'Razão Social'
+        fantasy_name: 'Nome Fantasia'
+        cnpj: 'CNPJ'
+        email: 'E-mail'
+        address: 'Endereço'
+        city: 'Cidade'
+        state: 'Estado'
+        cep: 'CEP'

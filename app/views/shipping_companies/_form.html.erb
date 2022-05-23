@@ -1,41 +1,41 @@
 <%= form_with(model: @shipping_company) do |f| %>
   <div>
-    <%= f.label :corporate_name, 'Razão Social'%>
+    <%= f.label :corporate_name%>
     <%= f.text_field :corporate_name %>
   </div>
 
   <div>
-    <%= f.label :fantasy_name, 'Nome Fantasia' %>
+    <%= f.label :fantasy_name %>
     <%= f.text_field :fantasy_name%>
   </div>
 
   <div>
-    <%= f.label :cnpj, 'CNPJ'%>
+    <%= f.label :cnpj%>
     <%= f.text_field :cnpj %>
   </div>
 
   <div>
-    <%= f.label :email, 'E-mail' %>
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
 
   <div>
-    <%= f.label :address, 'Endereço' %>
+    <%= f.label :address %>
     <%= f.text_field :address %>
   </div>
 
   <div>
-    <%= f.label :city, 'Cidade:' %>
+    <%= f.label :city %>
     <%= f.text_field :city %>
   </div>
 
   <div>
-    <%= f.label :state, 'Estado' %>
+    <%= f.label :state %>
     <%= f.text_field :state %>
   </div>
 
   <div>
-    <%= f.label :cep, 'CEP' %>
+    <%= f.label :cep %>
     <%= f.number_field :cep %>
   </div>
 
