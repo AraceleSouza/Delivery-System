@@ -1,24 +1,25 @@
 <section>
-<h2>Transportadoras</h2>
+<% if admin_signed_in? %>
+  <h2>Transportadora</h2>
 
-<div>
-<%= link_to('Cadastrar Transportadora', new_shipping_company_path)%>
-</div>
-
-<% if @shipping_companies.any? %>
-
-  <% @shipping_companies.each do |s| %>
   <div>
-      <dl>
-        <dt>Transportadora: </dt><dd><%= link_to(s.fantasy_name, shipping_company_path(s.id))%></dd>
-        <dt>CNPJ: </dt><dd><%= s.cnpj %></dd>
-        <dt>Localização: </dt><dd><%= s.city %> - <%= s.state %></dd> 
-      </dl>
-    </div>  
+  <%= link_to('Cadastrar Transportadora', new_shipping_company_path)%>
+  </div>
+
+  <% if @shipping_companies.any? %>
+
+    <% @shipping_companies.each do |s| %>
+    <div>
+        <dl>
+          <dt>Transportadora: </dt><dd><%= link_to(s.fantasy_name, shipping_company_path(s.id))%></dd>
+          <dt>CNPJ: </dt><dd><%= s.cnpj %></dd>
+          <dt>Localização: </dt><dd><%= s.city %> - <%= s.state %></dd> 
+        </dl>
+      </div>  
+    <% end %>
+
+  <% else %>
+    <p>Não existem transportadoras cadastradas.</p>
   <% end %>
-
-<% else %>
-  <p>Não existem transportadoras cadastradas.</p>
 <% end %>
-
 </section>

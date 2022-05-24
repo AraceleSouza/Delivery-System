@@ -5,6 +5,8 @@ shipping_company = ShippingCompany.create!(corporate_name: 'Solution LTDA', fant
                                             state:'BA' , cep: '41180-625' )
 functionary = Functionary.create!(email: 'juliana@solution.com', password: '362514', 
                                     shipping_company: shipping_company)
+functionary = Functionary.create!(email: 'mariana@solution.com', password: '369258', 
+                                    shipping_company: shipping_company)
                                     
 Vehicle.create!(plate: 'HMG-0248', brand: 'Fiat', year_fabrication: '2021',model: 'Ducato',freight: '3750', shipping_company: shipping_company)
 Vehicle.create!(plate: 'JSQ-7436', brand: 'Mercedes-Benz', year_fabrication: '2019',model: 'Sprinter Chassi',freight: '1.840', shipping_company: shipping_company)
