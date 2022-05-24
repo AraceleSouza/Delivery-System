@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_22_192130) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_24_014456) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -35,6 +35,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_22_192130) do
     t.index ["email"], name: "index_functionaries_on_email", unique: true
     t.index ["reset_password_token"], name: "index_functionaries_on_reset_password_token", unique: true
     t.index ["shipping_company_id"], name: "index_functionaries_on_shipping_company_id"
+  end
+
+  create_table "price_settings", force: :cascade do |t|
+    t.decimal "min_weight"
+    t.decimal "max_weight"
+    t.decimal "max_cubic_meter"
+    t.decimal "min_cubic_meter"
+    t.decimal "distance_value"
+    t.integer "shipping_company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shipping_company_id"], name: "index_price_settings_on_shipping_company_id"
   end
 
   create_table "shipping_companies", force: :cascade do |t|
@@ -64,5 +76,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_22_192130) do
   end
 
   add_foreign_key "functionaries", "shipping_companies"
+  add_foreign_key "price_settings", "shipping_companies"
   add_foreign_key "vehicles", "shipping_companies"
 end
