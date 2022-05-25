@@ -2,11 +2,11 @@
 
 <% if (@price_setting.errors.any?) %>
   <p>Verifique os erros abaixo:</p>
-  <ul>
-    <% @price_setting.errors.full_messages.each do |msg| %>
-    <li><%= msg %> </li>
-    <% end %>
-  </ul>
+    <ul>
+      <% @price_setting.errors.full_messages.each do |msg| %>
+        <li><%= msg %> </li>
+      <% end %>
+    </ul>
 <% end %>
 
 <%= form_with(model: [@shipping_company, @price_setting]) do |f| %>

@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'User authenticates' do
   it 'successfully' do
     # Arrange
-
     # Act
     visit root_path
     click_on 'Área Admin'

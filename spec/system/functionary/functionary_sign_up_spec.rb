@@ -21,7 +21,7 @@ describe 'Functionary authenticates' do
     expect(shipping_company).to eq Functionary.last.shipping_company
   end
 
-  it 'e não deve cadastrar se o dominio de email não esta presente no sistema' do
+  it 'with invalid email domain' do
     # Arrange
     shipping_company = ShippingCompany.create!(corporate_name: 'Alternativa Express LTDA', fantasy_name: 'Alternativa Express', 
                                                 email: 'agendamento@alternativa.com', cnpj: '43835515000114', 
@@ -35,9 +35,6 @@ describe 'Functionary authenticates' do
     fill_in 'Confirme sua senha', with: 'password'
     click_on 'Criar conta'
     # Assert
-    expect(page).not_to have_content 'Boas vindas! Você realizou seu registro com sucesso.'
-    expect(page).not_to have_content 'juliana@alternativa.com'
     expect(page).to have_content 'Email não cadastrado no sistema.'
-
   end
 end

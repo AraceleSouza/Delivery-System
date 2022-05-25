@@ -88,17 +88,17 @@ RSpec.describe ShippingCompany, type: :model do
       end
 
       it 'false when cep is empty' do
-      # Arrange
-      shipping_company = ShippingCompany.new(corporate_name: 'Solution LTDA', fantasy_name: 'Solution', 
-                                              email: 'transporte@solution.com.br', cnpj: '55385612000163', 
-                                              address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
-                                              state:'BA' , cep: ' ' )
-      # Act
-      result = shipping_company.valid?
-      # Assert
-      expect(result).to eq false 
-      end
-    end 
+        # Arrange
+        shipping_company = ShippingCompany.new(corporate_name: 'Solution LTDA', fantasy_name: 'Solution', 
+                                                email: 'transporte@solution.com.br', cnpj: '55385612000163', 
+                                                address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
+                                                state:'BA' , cep: ' ' )
+        # Act
+        result = shipping_company.valid?
+        # Assert
+        expect(result).to eq false 
+        end
+      end 
 
     it 'false when cnpj is already in use' do
       # Arrange
@@ -133,7 +133,7 @@ RSpec.describe ShippingCompany, type: :model do
       shipping_company = ShippingCompany.new(corporate_name: 'Solution LTDA', fantasy_name: 'Solution', 
                                                        email: 'transporte@solution.com.br', cnpj: '55385612000163', 
                                                        address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
-                                                       state:'BA' , cep: '41162-51' )
+                                                       state:'BA' , cep: '411651' )
       # Act
       result = shipping_company.valid?
       # Assert

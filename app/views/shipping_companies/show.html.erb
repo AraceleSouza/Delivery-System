@@ -1,26 +1,24 @@
+<% if functionary_signed_in? %>
+  <div>
+    <%= link_to('Veículos', shipping_company_vehicles_path(@shipping_company.id))%>| 
+    <%= link_to('Tabela de Preços', shipping_company_price_settings_path(@shipping_company.id)) %>
+  </div>
+<% end %>
 <h2>Detalhes da transportadora: </h2>
-<div>
-<strong>Nome Fantasia:</strong> <%= @shipping_company.fantasy_name %><br>
-<strong>Razão Social:</strong> <%= @shipping_company.corporate_name %><br>
-<strong>CNPJ:</strong> <%= @shipping_company.cnpj %><br>
-<strong>E-mail:</strong> <%= @shipping_company.email %><br>
-<strong>Endereço:</strong> <%= @shipping_company.address %><br>
-<strong>Cidade:</strong> <%= @shipping_company.city %><br>
-<strong>Estado:</strong> <%= @shipping_company.state %><br>
-<strong>CEP:</strong> <%= @shipping_company.cep %>
-</div>
+  <div>
+    <strong>Nome Fantasia:</strong> <%= @shipping_company.fantasy_name %><br>
+    <strong>Razão Social:</strong> <%= @shipping_company.corporate_name %><br>
+    <strong>CNPJ:</strong> <%= @shipping_company.cnpj %><br>
+    <strong>E-mail:</strong> <%= @shipping_company.email %><br>
+    <strong>Endereço:</strong> <%= @shipping_company.address %><br>
+    <strong>Cidade:</strong> <%= @shipping_company.city %><br>
+    <strong>Estado:</strong> <%= @shipping_company.state %><br>
+    <strong>CEP:</strong> <%= @shipping_company.cep %>
+  </div>
 
 <div>
-<%= link_to 'Voltar', shipping_companies_path %> 
-</div>
-<div>
-<%= link_to('Editar', edit_shipping_company_path(@shipping_company.id))%>
-</div>
-<div>
-<%= link_to('Veículos', shipping_company_vehicles_path(@shipping_company.id))%>
+  <%= link_to 'Voltar', shipping_companies_path %> | <%= link_to('Editar', edit_shipping_company_path(@shipping_company.id))%>
 </div>
 
-<div>
-<%= link_to('Tabela de Preços', shipping_company_price_settings_path(@shipping_company.id)) %>
-</div>
+
 

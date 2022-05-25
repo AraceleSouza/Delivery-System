@@ -1,19 +1,16 @@
 <section>
 
-<h2>Veículos</h2>
-
 <div>
   <%= link_to 'Cadastrar Veículo', new_shipping_company_vehicle_path(@shipping_company.id) %>
 </div>
 
+<h2>Veículos</h2>
 <% if @vehicles.any? %>
-
   <% @vehicles.each do |vehicle| %>
     <div>
-      <dt>Modelo: </dt><dd><%= link_to vehicle.model, shipping_company_vehicle_path(@shipping_company.id, vehicle.id) %></dd>
+      <strong>Modelo:</strong> <%= link_to vehicle.model, shipping_company_vehicle_path(@shipping_company.id, vehicle.id) %>
     </div>  
   <% end %>
-
 <% else %>
   <p>Não existem veículos cadastrados.</p>
 <% end %>

@@ -22,16 +22,17 @@ describe 'Admin manages your account' do
       expect(page).to have_content "Olá aracele@email.com"
     end
   end
+
   it 'and logout' do 
-  # Arrange
-  admin = Admin.create!(email: 'aracele@email.com', password: 'password')
-  # Act
-  visit root_path
-  login(admin)
-  click_on 'Sair'
-    # Assert
-  expect(page).to have_content 'Logout efetuado com sucesso.'
-  expect(page).to have_link 'Área Admin'
-  expect(page).not_to have_button 'Sair'
+    # Arrange
+    admin = Admin.create!(email: 'aracele@email.com', password: 'password')
+    # Act
+    visit root_path
+    login(admin)
+    click_on 'Sair'
+      # Assert
+    expect(page).to have_content 'Logout efetuado com sucesso.'
+    expect(page).to have_link 'Área Admin'
+    expect(page).not_to have_button 'Sair'
   end
 end

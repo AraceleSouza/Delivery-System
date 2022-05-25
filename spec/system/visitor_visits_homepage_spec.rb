@@ -5,9 +5,8 @@ describe 'visitor visits home page' do
     # Arrange
 
     # Act
-      visit root_path
+    visit root_path
     # Assert
-      expect(page).to have_content 'Sistema de Entregas'
+    expect(page).to have_content 'Sistema de Entregas'
   end
-
 end

@@ -10,13 +10,11 @@ describe 'Functionary sees shipping company price list' do
                                                city: 'Cajamar', state:'SP' , cep: '12536-100' )
     functionary = Functionary.create!(email: 'eduarda@transportadoraimperial.com', password: 'password', 
                                       shipping_company: shipping_company)
-    
     PriceSetting.create!(min_weight: 0.10, 
                   max_weight: 0.50,
                   min_cubic_meter: 1,
                   max_cubic_meter: 2,
-                  distance_value: 180, shipping_company: shipping_company)
-                  
+                  distance_value: 180, shipping_company: shipping_company)         
     # Act
     login_as(functionary)
     visit root_path

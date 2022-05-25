@@ -1,41 +1,42 @@
-<section>
-<h2>Tabela de Preço:</h2>
-<% if @price_settings.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Descrição</th>
-        <th>Valor</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @price_settings.each do |price| %>
-        <tr>
-          <td>Peso Mínimo:</td>
-          <td><%= number_with_precision(price.min_weight, precision: 2, separator: ',', delimiter: '.')%></td>
-        </tr>
-        <tr>
-          <td>Peso Máximo:</td>
-          <td><%= number_with_precision(price.max_weight, precision: 2, separator: ',', delimiter: '.')%></td>
-        </tr>
-        <tr>
-          <td>Metros cubicos Máximo: </td>
-          <td><%= number_to_human(price.max_cubic_meter, units: :distance)%></td>
-        </tr>
-        <tr>
-          <td>Metros cubicos Mínimo: </td>
-          <td><%= number_to_human(price.min_cubic_meter, units: :distance)%></td>
-        </tr>
-        <tr>
-          <td>Valor por KM:</td>
-          <td> <%= number_to_currency(price.distance_value, unit: "R$", separator: ",", delimiter: "")%></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-</section>
-
 <div>
   <%= link_to 'Cadastrar Preço', new_shipping_company_price_setting_path %> 
 </div>
+
+<section>
+  <h2>Tabela de Preço:</h2>
+  <% if @price_settings.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @price_settings.each do |price| %>
+          <tr>
+            <td>Peso Mínimo:</td>
+            <td><%= number_with_precision(price.min_weight, precision: 2, separator: ',', delimiter: '.')%></td>
+          </tr>
+          <tr>
+            <td>Peso Máximo:</td>
+            <td><%= number_with_precision(price.max_weight, precision: 2, separator: ',', delimiter: '.')%></td>
+          </tr>
+          <tr>
+            <td>Metros cubicos Máximo: </td>
+            <td><%= number_to_human(price.max_cubic_meter, units: :distance)%></td>
+          </tr>
+          <tr>
+            <td>Metros cubicos Mínimo: </td>
+            <td><%= number_to_human(price.min_cubic_meter, units: :distance)%></td>
+          </tr>
+          <tr>
+            <td>Valor por KM:</td>
+            <td> <%= number_to_currency(price.distance_value, unit: "R$", separator: ",", delimiter: "")%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</section>
+
