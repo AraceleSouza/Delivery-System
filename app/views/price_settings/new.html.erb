@@ -1,5 +1,14 @@
 <h2>Novo Preço</h2>
 
+<% if (@price_setting.errors.any?) %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @price_setting.errors.full_messages.each do |msg| %>
+    <li><%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with(model: [@shipping_company, @price_setting]) do |f| %>
   <div>
     <%= f.label :min_weight%>
