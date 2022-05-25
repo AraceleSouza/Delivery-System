@@ -1,0 +1,29 @@
+<section>
+  <h2>Prazos de Entrega:</h2>
+  <% if @deadlines.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @deadlines.each do |term| %>
+          <tr>
+            <td>Distância Mínima:</td>
+            <td><%= number_to_human(term.min_distance, units: :distance)%></td>
+          </tr>
+          <tr>
+            <td>Distância Máxima:</td>
+            <td><%= number_to_human(term.max_distance, units: :distance)%></td>
+          </tr>
+          <tr>
+            <td>Prazo em Dias: </td>
+            <td><%= number_to_human(term.deadline_in_days)%> dias úteis</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</section>
