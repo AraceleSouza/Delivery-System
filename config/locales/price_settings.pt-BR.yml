@@ -10,3 +10,14 @@ pt-BR:
       one: "kilometro"
       other: "kilometros"
     billion: "gazilhão de distância"
+  activerecord:
+    models:
+      price_setting: 'Tabela de Preços'
+    attributes:
+      price_setting:
+        min_weight: "Peso Mínimo"
+        max_weight: "Peso Máximo"
+        min_cubic_meter: "Metros cubicos Mínimo"
+        max_cubic_meter: "Metros cubicos Máximo"
+        distance_value: "Valor por KM"
+        

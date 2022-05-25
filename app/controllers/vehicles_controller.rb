@@ -25,7 +25,7 @@ class VehiclesController < ApplicationController
     end
   end
 
-    private
+  private
 
   def vehicles_params
     params.require(:vehicle).permit(:plate, :brand, :year_fabrication, :model, :freight)

@@ -1,0 +1,32 @@
+<h2>Novo Preço</h2>
+
+<%= form_with(model: [@shipping_company, @price_setting]) do |f| %>
+  <div>
+    <%= f.label :min_weight%>
+    <%= f.number_field :min_weight, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :max_weight %>
+    <%= f.number_field :max_weight, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :min_cubic_meter %>
+    <%= f.number_field :min_cubic_meter, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :max_cubic_meter %>
+    <%= f.number_field :max_cubic_meter, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :distance_value %>
+    <%= f.number_field :distance_value %>
+  </div>
+  
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>

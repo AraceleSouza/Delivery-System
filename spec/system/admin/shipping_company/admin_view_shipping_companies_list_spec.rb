@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Admin sees list of carriers' do
+describe 'Admin sees list of shipping company' do
     it 'successfully' do
   # Arrange
   admin = Admin.create!(email: 'aracele@email.com', password: 'password')
@@ -29,7 +29,7 @@ describe 'Admin sees list of carriers' do
 
   end
  
-  it 'and there are no registered carriers' do
+  it 'and there are no registered shipping company' do
     # Arrange 
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
     # Act

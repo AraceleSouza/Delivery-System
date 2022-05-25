@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Admin sees details of a carrier' do
+describe 'Admin sees details of a shipping company' do
   it 'and see additional information' do
   # Arrange
   admin = Admin.create!(email: 'aracele@email.com', password: 'password')
