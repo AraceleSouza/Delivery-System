@@ -1,0 +1,21 @@
+pt-BR:
+  distance:
+    centi:
+      one: "centimetro"
+      other: "centimetros"
+    unit:
+      one: "metro"
+      other: "metros"
+    thousand:
+      one: "kilometro"
+      other: "kilometros"
+    billion: "gazilhão de distância"
+  activerecord:
+    models:
+      deadline: 'Prazos de Entrega'
+    attributes:
+      deadline:
+        min_distance: "Distância Mínima"
+        max_distance: "Distância Máxima"
+        deadline_in_days: "Prazo em Dias"
+       

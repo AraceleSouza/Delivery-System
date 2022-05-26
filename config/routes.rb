@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :shipping_companies, only: [:index, :new, :create, :show, :edit, :update] do
     resources :vehicles, only: [:index, :show, :new, :create]
     resources :price_settings, only: [:index, :new, :create]  
-    resources :deadlines, only: [:index]        
+    resources :deadlines, only: [:index, :new, :create]       
   end
   
 end
