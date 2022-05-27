@@ -1,8 +1,11 @@
+
 <section>
+<% if admin_signed_in? %>
   <div>
     <%= link_to('Cadastrar Produto', new_shipping_company_product_model_path)%>
   </div>
-
+ <% end %>
+ 
   <h2>Modelos de Produtos</h2>
   <% if @product_models.any? %>
     <% @product_models.each do |product| %>

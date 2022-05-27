@@ -3,9 +3,10 @@
     <%= link_to('Veículos', shipping_company_vehicles_path(@shipping_company.id))%>| 
     <%= link_to('Tabela de Preços', shipping_company_price_settings_path(@shipping_company.id)) %>|
     <%= link_to('Prazos de Entrega', shipping_company_deadlines_path(@shipping_company.id))%>|
-    <%= link_to('Modelos de Produtos', shipping_company_product_models_path(@shipping_company.id))%>
   </div>
 <% end %>
+
+<%= link_to('Produtos', shipping_company_product_models_path(@shipping_company.id))%>
 
 <h2>Detalhes da transportadora: </h2>
   <div>
@@ -20,6 +21,7 @@
   </div>
 
 <% if admin_signed_in? %>
+
 <div>
   <%= link_to 'Voltar', shipping_companies_path %> | <%= link_to('Editar', edit_shipping_company_path(@shipping_company.id))%>
 </div>
