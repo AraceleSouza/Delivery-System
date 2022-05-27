@@ -20,6 +20,7 @@ describe 'Admin sees product models' do
     click_on 'Minha Transportadora'
     click_on 'Modelos de Produtos'
     # Assert
+    expect(current_path).to eq shipping_company_product_models_path(shipping_company.id)
     expect(page).to have_content 'Notebook Dell'
     expect(page).to have_content 'NOTEDELL0905697'
     expect(page).to have_content 'Impressora HP'

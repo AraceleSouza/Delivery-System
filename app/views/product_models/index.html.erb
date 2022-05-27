@@ -1,0 +1,11 @@
+<h2>Modelos de Produtos</h2>
+
+  <% if @product_models.any? %>
+    <% @product_models.each do |s| %>
+      <div>
+        <p>Nome: <%= s.name %> | Código: <%= s.sku %></p>
+      </div> 
+    <% end %>
+  <% else %>
+    <p>Não existem transportadoras cadastradas.</p>
+  <% end %>
