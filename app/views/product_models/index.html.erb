@@ -1,12 +1,13 @@
 <section>
-<h2>Modelos de Produtos</h2>
   <div>
     <%= link_to('Cadastrar Produto', new_shipping_company_product_model_path)%>
   </div>
+
+  <h2>Modelos de Produtos</h2>
   <% if @product_models.any? %>
-    <% @product_models.each do |s| %>
+    <% @product_models.each do |product| %>
       <div>
-        <p>Nome: <%= s.name %> | Código: <%= s.sku %></p>
+        <p>Nome: <%= product.name %> | Código: <%= link_to product.sku, shipping_company_product_model_path(@shipping_company.id, product.id) %></p>
       </div> 
     <% end %>
   <% else %>

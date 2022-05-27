@@ -4,6 +4,10 @@ class ProductModelsController < ApplicationController
     @product_models = ProductModel.all
   end
 
+  def show
+    @product_model = ProductModel.find(params[:id])
+  end
+
   def new
     @shipping_company = ShippingCompany.find(params[:shipping_company_id])
     @product_model = ProductModel.new
@@ -20,11 +24,10 @@ class ProductModelsController < ApplicationController
       render 'new'
     end
   end
-  
+
   private
 
   def product_model_params
     params.require(:product_model).permit(:name, :weight, :width, :height, :depth, :sku)
   end
- 
 end

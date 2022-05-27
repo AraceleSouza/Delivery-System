@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :vehicles, only: [:index, :show, :new, :create]
     resources :price_settings, only: [:index, :new, :create]  
     resources :deadlines, only: [:index, :new, :create] 
-    resources :product_models, only: [:index, :new, :create]
+    resources :product_models, only: [:index, :new, :create, :show]
   end
   
 end
