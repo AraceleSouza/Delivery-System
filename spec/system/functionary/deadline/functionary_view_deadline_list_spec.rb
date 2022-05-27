@@ -10,7 +10,7 @@ describe 'Functionary sees shipping company deadline' do
                                                city: 'Cajamar', state:'SP' , cep: '12536-100' )
     functionary = Functionary.create!(email: 'eduarda@transportadoraimperial.com', password: 'password', 
                                       shipping_company: shipping_company)
-    Deadline.create!(min_distance: 1, max_distance: 100, deadline_in_days: 2 , shipping_company: shipping_company)         
+    Deadline.create!(min_distance: 10, max_distance: 100, deadline_in_days: 2 , shipping_company: shipping_company)         
     # Act
     login_as(functionary)
     visit root_path
@@ -18,7 +18,7 @@ describe 'Functionary sees shipping company deadline' do
     click_on 'Prazos de Entrega'
     # Assert
     expect(current_path).to eq shipping_company_deadlines_path(shipping_company.id)
-    expect(page).to have_content 'Distância Mínima: 1 metro'
+    expect(page).to have_content 'Distância Mínima: 10 metros'
     expect(page).to have_content 'Distância Máxima: 100 metros'
     expect(page).to have_content 'Prazo em Dias: 2 dias úteis'    
   end
