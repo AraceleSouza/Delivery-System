@@ -42,6 +42,6 @@ describe 'Admin sees product models' do
     click_on 'Minha Transportadora'
     click_on 'Modelos de Produtos'
     # Assert
-    expect(page).to have_content 'Nenhum modelo de produto cadastrado.'
+    expect(page).to have_content 'Não existem modelos de produtos cadastrados.'
   end
 end

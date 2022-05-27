@@ -1,0 +1,38 @@
+<h2>Novo Produto</h2>
+
+<%= form_with(model: [@shipping_company, @product_model]) do |f| %>
+  <div>
+    <%= f.label :name  %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :weight %>
+    <%= f.number_field :weight, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :width %>
+    <%= f.number_field :width, step: 0.01 %>
+  </div>
+  
+  <div>
+    <%= f.label :height %>
+    <%= f.number_field :height, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :depth %>
+    <%= f.number_field :depth, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :sku %>
+    <%= f.text_field :sku %>
+  </div>
+
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>
+

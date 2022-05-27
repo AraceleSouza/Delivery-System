@@ -1,10 +1,10 @@
 pt-BR:
   activerecord:
     models:
-      Admin: 'Administrador'
+      admin: 'Administrador'
     attributes:
-      Admin:
-        name: "Nome"
+      admin:
+        name: 'Nome'
         
 
         

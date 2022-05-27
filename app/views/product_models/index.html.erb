@@ -1,5 +1,8 @@
+<section>
 <h2>Modelos de Produtos</h2>
-
+  <div>
+    <%= link_to('Cadastrar Produto', new_shipping_company_product_model_path)%>
+  </div>
   <% if @product_models.any? %>
     <% @product_models.each do |s| %>
       <div>
@@ -7,5 +10,6 @@
       </div> 
     <% end %>
   <% else %>
-    <p>Não existem transportadoras cadastradas.</p>
+    <p>Não existem modelos de produtos cadastrados.</p>
   <% end %>
+</section>
