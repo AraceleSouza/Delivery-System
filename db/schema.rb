@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_27_120720) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_27_213002) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,6 +72,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_120720) do
     t.index ["shipping_company_id"], name: "index_product_models_on_shipping_company_id"
   end
 
+  create_table "service_orders", force: :cascade do |t|
+    t.integer "shipping_company_id", null: false
+    t.integer "vehicle_id", null: false
+    t.integer "product_model_id", null: false
+    t.string "full_address"
+    t.string "customer_address"
+    t.string "customer_name"
+    t.date "estimated_delivery_date"
+    t.string "integer", default: "0"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_model_id"], name: "index_service_orders_on_product_model_id"
+    t.index ["shipping_company_id"], name: "index_service_orders_on_shipping_company_id"
+    t.index ["vehicle_id"], name: "index_service_orders_on_vehicle_id"
+  end
+
   create_table "shipping_companies", force: :cascade do |t|
     t.string "fantasy_name"
     t.string "corporate_name"
@@ -102,5 +118,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_120720) do
   add_foreign_key "functionaries", "shipping_companies"
   add_foreign_key "price_settings", "shipping_companies"
   add_foreign_key "product_models", "shipping_companies"
+  add_foreign_key "service_orders", "product_models"
+  add_foreign_key "service_orders", "shipping_companies"
+  add_foreign_key "service_orders", "vehicles"
   add_foreign_key "vehicles", "shipping_companies"
 end
