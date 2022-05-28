@@ -1,8 +1,8 @@
-<h2>Detalhes do Veículo</h2>
+<h2><%= Vehicle.model_name.human %></h2>
 <div>
-  <strong>Modelo:</strong> <%= @vehicle.model %><br>
-  <strong>Marca:</strong> <%= @vehicle.brand %><br>
-  <strong>Placa:</strong> <%= @vehicle.plate %><br>
-  <strong>Ano de fabricação:</strong> <%= @vehicle.year_fabrication %><br>
-  <strong>Capacidade máxima:</strong> <%= @vehicle.freight %> kg<br>
+  <strong><%= Vehicle.human_attribute_name(:model)%>:</strong> <%= @vehicle.model %><br>
+  <strong><%= Vehicle.human_attribute_name(:brand)%>:</strong> <%= @vehicle.brand %><br>
+  <strong><%= Vehicle.human_attribute_name(:plate)%>:</strong> <%= @vehicle.plate %><br>
+  <strong><%= Vehicle.human_attribute_name(:year_fabrication)%>:</strong> <%= @vehicle.year_fabrication %><br>
+  <strong><%= Vehicle.human_attribute_name(:freight)%>:</strong> <%= @vehicle.freight %> kg<br>
 </div>

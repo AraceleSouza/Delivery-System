@@ -69,14 +69,14 @@ describe 'Functionary sees vehicles' do
     expect(page).to have_content 'Modelo: Ducato'
     expect(page).to have_content 'Marca: Fiat'
     expect(page).to have_content 'Placa: HMG-0248'
-    expect(page).to have_content 'Ano de fabricação: 2021'
-    expect(page).to have_content 'Capacidade máxima: 3750 kg'  
+    expect(page).to have_content 'Ano de Fabricação: 2021'
+    expect(page).to have_content 'Capacidade Máxima: 3750 kg'  
     
     expect(page).not_to have_content 'Modelo: Sprinter Chassi '
     expect(page).not_to have_content 'Marca: Mercedes-Benz'
     expect(page).not_to have_content 'Placa: JSQ-7436'
-    expect(page).not_to have_content 'Ano de fabricação: 2019'
-    expect(page).not_to have_content 'Capacidade máxima: 1840 kg'  
+    expect(page).not_to have_content 'Ano de Fabricação: 2019'
+    expect(page).not_to have_content 'Capacidade Máxima: 1840 kg'  
   end 
 
   it 'and there are no registered vehicles' do

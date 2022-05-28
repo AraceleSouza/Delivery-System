@@ -8,7 +8,7 @@
 <% if @vehicles.any? %>
   <% @vehicles.each do |vehicle| %>
     <div>
-      <strong>Modelo:</strong> <%= link_to vehicle.model, shipping_company_vehicle_path(@shipping_company.id, vehicle.id) %>
+      <strong><%= Vehicle.human_attribute_name(:model)%>:</strong> <%= link_to vehicle.model, shipping_company_vehicle_path(@shipping_company.id, vehicle.id) %>
     </div>  
   <% end %>
 <% else %>

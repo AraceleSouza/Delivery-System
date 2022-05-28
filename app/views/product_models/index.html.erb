@@ -10,7 +10,8 @@
   <% if @product_models.any? %>
     <% @product_models.each do |product| %>
       <div>
-        <p>Nome: <%= product.name %> | Código: <%= link_to product.sku, shipping_company_product_model_path(@shipping_company.id, product.id) %></p>
+        <p><%= ProductModel.human_attribute_name(:name)%>: <%= product.name %> | 
+        <%= ProductModel.human_attribute_name(:sku)%>: <%= link_to product.sku, shipping_company_product_model_path(@shipping_company.id, product.id) %></p>
       </div> 
     <% end %>
   <% else %>

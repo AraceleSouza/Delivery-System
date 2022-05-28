@@ -1,0 +1,13 @@
+<section>
+  <h2>Ordens de Serviço</h2>
+  <% if @service_orders.any? %>
+    <% @service_orders.each do |order| %>
+      <div>
+        <p> <%= order.code %> | <%=  order.status %></p>
+      </div> 
+    <% end %>
+  <% else %>
+    <p>Não existem ordens de serviço cadastradas.</p>
+  <% end %>
+</section>
+

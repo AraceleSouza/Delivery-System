@@ -10,21 +10,20 @@
 
 <h2>Detalhes da transportadora: </h2>
   <div>
-    <strong>Nome Fantasia:</strong> <%= @shipping_company.fantasy_name %><br>
-    <strong>Razão Social:</strong> <%= @shipping_company.corporate_name %><br>
-    <strong>CNPJ:</strong> <%= @shipping_company.cnpj %><br>
-    <strong>E-mail:</strong> <%= @shipping_company.email %><br>
-    <strong>Endereço:</strong> <%= @shipping_company.address %><br>
-    <strong>Cidade:</strong> <%= @shipping_company.city %><br>
-    <strong>Estado:</strong> <%= @shipping_company.state %><br>
-    <strong>CEP:</strong> <%= @shipping_company.cep %>
+    <strong><%= ShippingCompany.human_attribute_name(:fantasy_name)%>:</strong> <%= @shipping_company.fantasy_name %><br>
+    <strong><%= ShippingCompany.human_attribute_name(:corporate_name)%>:</strong> <%= @shipping_company.corporate_name %><br>
+    <strong><%= ShippingCompany.human_attribute_name(:cnpj)%>:</strong> <%= @shipping_company.cnpj %><br>
+    <strong><%= ShippingCompany.human_attribute_name(:email)%>:</strong> <%= @shipping_company.email %><br>
+    <strong><%= ShippingCompany.human_attribute_name(:address)%>:</strong> <%= @shipping_company.address %><br>
+    <strong><%= ShippingCompany.human_attribute_name(:city)%>:</strong> <%= @shipping_company.city %><br>
+    <strong><%= ShippingCompany.human_attribute_name(:state)%>:</strong> <%= @shipping_company.state %><br>
+    <strong><%= ShippingCompany.human_attribute_name(:cep)%>:</strong> <%= @shipping_company.cep %>
   </div>
 
 <% if admin_signed_in? %>
-
-<div>
-  <%= link_to 'Voltar', shipping_companies_path %> | <%= link_to('Editar', edit_shipping_company_path(@shipping_company.id))%>
-</div>
+  <div>
+    <%= link_to 'Voltar', shipping_companies_path %> | <%= link_to('Editar', edit_shipping_company_path(@shipping_company.id))%>
+  </div>
 <% end %>
 
 

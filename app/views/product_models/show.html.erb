@@ -1,9 +1,9 @@
-<h2>Detalhes do Produto</h2>
+<h2><%= ProductModel.model_name.human %></h2>
 <div>
-  <strong>Nome:</strong> <%= @product_model.name %><br>
-  <strong>Peso:</strong> <%= @product_model.weight %><br>
-  <strong>Largura:</strong> <%= @product_model.width %><br>
-  <strong>Altura:</strong> <%= @product_model.height %><br>
-  <strong>Profundidade:</strong> <%= @product_model.depth %><br>
-  <strong>Código:</strong> <%= @product_model.sku %> <br>
+  <strong><%= ProductModel.human_attribute_name(:name)%>:</strong> <%= @product_model.name %><br>
+  <strong><%= ProductModel.human_attribute_name(:weight)%>:</strong> <%= @product_model.weight %><br>
+  <strong><%= ProductModel.human_attribute_name(:width)%>:</strong> <%= @product_model.width %><br>
+  <strong><%= ProductModel.human_attribute_name(:height)%>:</strong> <%= @product_model.height %><br>
+  <strong><%= ProductModel.human_attribute_name(:depth)%>:</strong> <%= @product_model.depth %><br>
+  <strong><%= ProductModel.human_attribute_name(:sku)%>:</strong> <%= @product_model.sku %> <br>
 </div>

@@ -15,23 +15,23 @@
       <tbody>
         <% @price_settings.each do |price| %>
           <tr>
-            <td>Peso Mínimo:</td>
+            <td><%= PriceSetting.human_attribute_name(:min_weight)%>:</td>
             <td><%= number_with_precision(price.min_weight, precision: 2, separator: ',', delimiter: '.')%></td>
           </tr>
           <tr>
-            <td>Peso Máximo:</td>
+            <td><%= PriceSetting.human_attribute_name(:max_weight)%>:</td>
             <td><%= number_with_precision(price.max_weight, precision: 2, separator: ',', delimiter: '.')%></td>
           </tr>
           <tr>
-            <td>Metros cubicos Máximo: </td>
+            <td><%= PriceSetting.human_attribute_name(:max_cubic_meter)%>:</td>
             <td><%= number_to_human(price.max_cubic_meter, units: :distance)%></td>
           </tr>
           <tr>
-            <td>Metros cubicos Mínimo: </td>
+            <td><%= PriceSetting.human_attribute_name(:min_cubic_meter)%>:</td>
             <td><%= number_to_human(price.min_cubic_meter, units: :distance)%></td>
           </tr>
           <tr>
-            <td>Valor por KM:</td>
+            <td><%= PriceSetting.human_attribute_name(:distance_value)%>:</td>
             <td> <%= number_to_currency(price.distance_value, unit: "R$", separator: ",", delimiter: "")%></td>
           </tr>
         <% end %>

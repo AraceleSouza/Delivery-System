@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      service_order: 'Pedido'
+    attributes:
+      service_order:
+        shipping_company_id: 'Transportadora'
+        shipping_company: 'Transportadora'
+        vehicle_id: 'Veículo'
+        vehicle: 'Veículo'
+        product_model_id: 'Produto'
+        product_model: 'Produto'
+        full_address: 'Endereço completo para retirada'
+        customer_address: 'Endereço do cliente'
+        customer_name: 'Nome do cliente'
+        estimated_delivery_date: 'Data prevista para entrega'

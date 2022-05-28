@@ -1,7 +1,7 @@
-<h2>Pedido: <%= @service_order.code %></h2>
+<h2><%= ServiceOrder.model_name.human %>: <%= @service_order.code %></h2>
 <div>
-  <strong>Transportadora:</strong> <%= @service_order.shipping_company.corporate_name %><br>
-  <strong>Veículo:</strong> <%= @service_order.vehicle.model %><br>
-  <strong>Produto:</strong> <%= @service_order.product_model.sku %><br>
-  <strong>Data prevista para entrega:</strong> <%= I18n.localize(@service_order.estimated_delivery_date) %><br>
+  <strong><%= ServiceOrder.human_attribute_name(:shipping_company_id)%>:</strong> <%= @service_order.shipping_company.corporate_name %><br>
+  <strong><%= ServiceOrder.human_attribute_name(:vehicle_id)%>:</strong> <%= @service_order.vehicle.model %><br>
+  <strong><%= ServiceOrder.human_attribute_name(:product_model_id)%>:</strong> <%= @service_order.product_model.sku %><br>
+  <strong><%= ServiceOrder.human_attribute_name(:estimated_delivery_date)%>:</strong> <%= I18n.localize(@service_order.estimated_delivery_date) %><br>
 </div>
