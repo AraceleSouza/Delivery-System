@@ -4,7 +4,9 @@ class ServiceOrder < ApplicationRecord
   belongs_to :product_model
   enum status: {pending: 0, delivered: 5, canceled: 9 }
 
-  before_create :generate_code
+  validates :code, presence: true
+
+  before_validation :generate_code
 
   private
 

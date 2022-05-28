@@ -1,6 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe ServiceOrder, type: :model do
+  describe '#valid?' do
+    it 'must have a code' do
+       # Arrange
+       admin = Admin.create!(email: 'aracele@email.com', password: 'password')
+       shipping_company = ShippingCompany.create!(corporate_name: 'Alternativa Express LTDA', fantasy_name: 'Alternativa Express', 
+                               email: 'agendamento@alternativa.com ', cnpj: '43835515000114', 
+                               address:'Rua Conde do Pinhal, 56', city: 'Guarulhos', state:'SP', cep:'12369-122' )  
+       vehicle = Vehicle.create!(plate: 'JSQ-7436', brand: 'Mercedes-Benz', year_fabrication: '2019',
+                                 model: 'Sprinter Chassi',freight: '1.840', shipping_company: shipping_company)
+       product_model = ProductModel.create!(name: 'Impressora HP' , weight: 4000 , width: 40 , height: 18 , depth: 35,
+                                           sku: 'IMPRESHP9563625' , shipping_company:shipping_company)
+       service_order = ServiceOrder.new(shipping_company: shipping_company, vehicle: vehicle, product_model:product_model, 
+                                           full_address:'Rua das Flores, 100 - São Paulo - SP - CEP: 12255-360', 
+                                           customer_address:'Avenida do Museu do Amanhã, 1000 - Rio de Janeiro - RJ - CEP: 20100-000', 
+                                           customer_name:'Mariana da Silva', estimated_delivery_date:'05/10/2022')
+       # Act
+       result = service_order.valid?
+       # Assert
+       expect(result).to be true
+    end
+  end
+
   describe 'generate a randow code' do
     it 'when creating a new order ' do
       # Arrange
