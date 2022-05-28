@@ -1,0 +1,7 @@
+<h2>Detalhes do Pedido:</h2>
+<div>
+  <strong>Transportadora:</strong> <%= @service_order.shipping_company.corporate_name %><br>
+  <strong>Veículo:</strong> <%= @service_order.vehicle.model %><br>
+  <strong>Produto:</strong> <%= @service_order.product_model.sku %><br>
+  <strong>Data prevista para entrega:</strong> <%= I18n.localize(@service_order.estimated_delivery_date) %><br>
+</div>

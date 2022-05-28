@@ -20,7 +20,8 @@
 
         <% if admin_signed_in? %>
           Olá <%= current_admin.email %>
-          <%= link_to 'Transportadoras', shipping_companies_path %>
+         | <%= link_to 'Transportadoras', shipping_companies_path %> |
+           <%= link_to 'Registrar Pedido', new_service_order_path %> |
           <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
         <% end %>
 

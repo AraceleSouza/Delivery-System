@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :deadlines, only: [:index, :new, :create] 
     resources :product_models, only: [:index, :new, :create, :show]
   end
-  
+  resources :service_orders, only: [:index, :new, :create, :show]
 end
