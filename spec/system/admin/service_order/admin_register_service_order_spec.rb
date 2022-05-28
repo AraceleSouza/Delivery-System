@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Admin register an order' do
-  it 'successfully' do
+    it 'successfully' do
     # Arrange
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
 
@@ -21,6 +21,7 @@ describe 'Admin register an order' do
                         sku: 'NOTEDELL0905697' , shipping_company: shipping_company)
     product_model = ProductModel.create!(name: 'Impressora HP' , weight: 4000 , width: 40 , height: 18 , depth: 35,
                                         sku: 'IMPRESHP9563625' , shipping_company:shipping_company)    
+    allow(SecureRandom).to receive(:alphanumeric).with(15).and_return('ABCDEF123456789') 
     # Act
     login_as(admin, :scope => :admin)
     visit root_path
@@ -35,7 +36,7 @@ describe 'Admin register an order' do
     click_on 'Gravar'
     # Assert
     expect(page).to have_content 'Pedido registrado com sucesso.'
-    #expect(page).to have_content 'Pedido ABC12345'
+    expect(page).to have_content 'Pedido: ABCDEF123456789'
     expect(page).to have_content 'Transportadora: Alternativa Express LTDA'
     expect(page).to have_content 'Veículo: Sprinter Chassi'
     expect(page).to have_content 'Produto: IMPRESHP9563625'

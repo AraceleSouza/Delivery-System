@@ -19,12 +19,12 @@
 
   <div>
     <%= f.label :full_address, 'Endereço completo para retirada' %>
-    <%= f.text_field :full_address %>
+    <%= f.text_area :full_address %>
   </div>
 
   <div>
     <%= f.label :customer_address, 'Endereço do cliente' %>
-    <%= f.text_field :customer_address %>
+    <%= f.text_area :customer_address %>
   </div>
 
   <div>
@@ -36,7 +36,7 @@
     <%= f.label :estimated_delivery_date, 'Data prevista para entrega' %>
     <%= f.date_field :estimated_delivery_date %>
   </div>
-  
+
   <div>
     <%= f.submit 'Gravar'%>
   </div>
