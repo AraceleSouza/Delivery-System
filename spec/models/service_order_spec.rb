@@ -21,6 +21,48 @@ RSpec.describe ServiceOrder, type: :model do
        # Assert
        expect(result).to be true
     end
+    
+    it 'estimated delivery date must be mandatory' do
+      # Arrange
+      service_order = ServiceOrder.new(estimated_delivery_date: ' ')
+      # Act
+      service_order.valid?
+      result = service_order.errors.include? (:estimated_delivery_date)
+      # Assert
+      expect(result).to be true
+    end
+
+    it 'estimated delivery date must not be old' do
+      # Arrange
+      service_order = ServiceOrder.new(estimated_delivery_date: 1.day.ago)
+      # Act
+      service_order.valid?
+      result =service_order.errors.include? (:estimated_delivery_date)
+      # Assert
+      expect(result).to be true
+      expect(service_order.errors[:estimated_delivery_date]).to include("deve ser posterior.")
+    end
+
+    it 'estimated delivery date should not be the same as today' do
+      # Arrange
+      service_order = ServiceOrder.new(estimated_delivery_date: Date.today)
+      # Act
+      service_order.valid?
+      result = service_order.errors.include? (:estimated_delivery_date)
+      # Assert
+      expect(result).to be true
+      expect(service_order.errors[:estimated_delivery_date]).to include("deve ser posterior.")
+    end
+
+    it 'estimated delivery date must be equal to or greater than tomorrow' do
+      # Arrange
+      service_order = ServiceOrder.new(estimated_delivery_date: 1.day.from_now)
+      # Act
+      service_order.valid?
+      result = service_order.errors.include? (:estimated_delivery_date)
+      # Assert
+      expect(result).to be false
+    end
   end
 
   describe 'generate a randow code' do
