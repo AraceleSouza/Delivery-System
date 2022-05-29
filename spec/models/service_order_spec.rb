@@ -76,7 +76,7 @@ RSpec.describe ServiceOrder, type: :model do
                                 model: 'Sprinter Chassi',freight: '1.840', shipping_company: shipping_company)
       product_model = ProductModel.create!(name: 'Impressora HP' , weight: 4000 , width: 40 , height: 18 , depth: 35,
                                           sku: 'IMPRESHP9563625' , shipping_company:shipping_company)
-      service_order = ServiceOrder.new(shipping_company: shipping_company, vehicle: vehicle, product_model:product_model, 
+      service_order = ServiceOrder.new( shipping_company: shipping_company, vehicle: vehicle, product_model:product_model, 
                                           full_address:'Rua das Flores, 100 - São Paulo - SP - CEP: 12255-360', 
                                           customer_address:'Avenida do Museu do Amanhã, 1000 - Rio de Janeiro - RJ - CEP: 20100-000', 
                                           customer_name:'Mariana da Silva', estimated_delivery_date:'05/10/2022')
