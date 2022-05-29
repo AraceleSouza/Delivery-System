@@ -25,5 +25,7 @@
     <dd><%= order.vehicle.model %></dd>
     <dt><%= ServiceOrder.human_attribute_name(:product_model_id)%>:</dt>
     <dd><%= order.product_model.sku %></dd>
+    <dt><%= ServiceOrder.human_attribute_name(:status)%>:</dt> 
+    <dd><%= t(order.status) %></dd>
   </dl>
 <% end %>

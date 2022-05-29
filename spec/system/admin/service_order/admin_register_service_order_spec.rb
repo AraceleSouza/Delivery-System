@@ -41,7 +41,7 @@ describe 'Admin register an order' do
     expect(page).to have_content 'Veículo: Sprinter Chassi'
     expect(page).to have_content 'Produto: IMPRESHP9563625'
     expect(page).to have_content 'Data prevista para entrega: 05/10/2022'
-    #expect(page).to have_content 'Status do Pedido: Pendente'
+    expect(page).to have_content 'Situação do Pedido: Pendente'
     expect(page).not_to have_content 'Transportadora Imperial do Brasil LTDA'
     expect(page).not_to have_content 'Ducato'
     expect(page).not_to have_content 'Notebook Dell'

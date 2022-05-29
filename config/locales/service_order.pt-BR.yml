@@ -1,4 +1,7 @@
 pt-BR:
+  pending: "Pendente"
+  canceled: "Cancelado"
+  delivered: "Entregue"
   activerecord:
     models:
       service_order:  
@@ -17,3 +20,4 @@ pt-BR:
         customer_name: 'Nome do cliente'
         estimated_delivery_date: 'Data prevista para entrega'
         code: 'Código'
+        status: 'Situação do Pedido'

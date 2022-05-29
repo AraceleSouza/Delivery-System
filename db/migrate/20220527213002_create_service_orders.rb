@@ -8,7 +8,7 @@ class CreateServiceOrders < ActiveRecord::Migration[7.0]
       t.string :customer_address
       t.string :customer_name
       t.date :estimated_delivery_date
-      t.string :integer, default: 0
+      t.integer :status, default: 0
 
       t.timestamps
     end

@@ -10,5 +10,5 @@
   <dt><%= ServiceOrder.human_attribute_name(:estimated_delivery_date)%>:</dt> 
   <dd><%= I18n.localize(@service_order.estimated_delivery_date) %></dd>
   <dt><%= ServiceOrder.human_attribute_name(:status)%>:</dt> 
-  <dd><%= @service_order.status %></dd>
+  <dd><%= t(@service_order.status) %></dd>
 </dl>

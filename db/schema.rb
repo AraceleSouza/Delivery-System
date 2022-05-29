@@ -80,7 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_125741) do
     t.string "customer_address"
     t.string "customer_name"
     t.date "estimated_delivery_date"
-    t.string "integer", default: "0"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code"
