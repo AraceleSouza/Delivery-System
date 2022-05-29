@@ -1,6 +1,5 @@
 class ServiceOrdersController < ApplicationController 
   def index
-    @shipping_company = ShippingCompany.find(params[:shipping_company_id])
     @service_orders = ServiceOrder.all
   end
 
@@ -21,9 +20,12 @@ class ServiceOrdersController < ApplicationController
     @service_order = ServiceOrder.new(service_order_params)
     if @service_order.save
       redirect_to @service_order, notice: 'Pedido registrado com sucesso.'
-    #else
-    #  flash.now[:notice] = 'Não foi possível cadastrar o pedido.'
-    #render 'new'
+    else
+      @shipping_companies = ShippingCompany.all
+      @vehicles = Vehicle.all
+      @product_models = ProductModel.all
+      flash.now[:notice] = 'Não foi possível registrar o pedido.'
+    render 'new'
     end
   end
 
