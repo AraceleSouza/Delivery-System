@@ -13,3 +13,17 @@
   <dd><%= @service_order.product_model.sku %></dd>
   </dl>
 <% end %>
+
+<p><%= @service_orders.count %> <%= ServiceOrder.model_name.human(count: @service_orders.count).downcase %> <%= I18n.translate(:found, count: @service_orders.count)%></p>
+<% @service_orders.each do |order| %>
+  <dl>
+    <dt><%= ServiceOrder.human_attribute_name(:code)%>:</dt>
+    <dd><%= order.code %></dd>
+    <dt><%= ServiceOrder.human_attribute_name(:shipping_company_id)%>:</dt>
+    <dd><%= order.shipping_company.corporate_name %></dd>
+    <dt><%= ServiceOrder.human_attribute_name(:vehicle_id)%>:</dt>
+    <dd><%= order.vehicle.model %></dd>
+    <dt><%= ServiceOrder.human_attribute_name(:product_model_id)%>:</dt>
+    <dd><%= order.product_model.sku %></dd>
+  </dl>
+<% end %>

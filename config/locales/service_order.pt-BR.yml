@@ -1,7 +1,9 @@
 pt-BR:
   activerecord:
     models:
-      service_order: 'Pedido'
+      service_order:  
+        one: 'Pedido'
+        other: 'Pedidos'
     attributes:
       service_order:
         shipping_company_id: 'Transportadora'

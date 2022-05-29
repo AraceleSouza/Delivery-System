@@ -70,4 +70,43 @@ describe 'Admin register an order' do
     expect(page).to have_content 'Não foi possível registrar o pedido.'
     expect(page).to have_content 'Data prevista para entrega não pode ficar em branco'
   end
+
+  it 'and find multiple orders' do
+    # Arrange
+    admin = Admin.create!(email: 'aracele@email.com', password: 'password')
+    first_shipping_company = ShippingCompany.create!(corporate_name: 'Alternativa Express LTDA', fantasy_name: 'Alternativa Express', 
+                            email: 'agendamento@alternativa.com ', cnpj: '43835515000114',
+                            address:'Rua Conde do Pinhal, 56', city: 'Guarulhos', state:'SP', cep:'12369-122' )
+    second_shipping_company = ShippingCompany.create(corporate_name: 'Transportadora Imperial do Brasil LTDA', fantasy_name: 'Transportadora Imperial', 
+                                email: 'contato@transportadoraimperial.com', cnpj: '62325611000167', 
+                                address:'Av das Flores, 108', city: 'Cajamar', state:'SP' , cep: '12536-100' )
+    vehicle = Vehicle.create!(plate: 'JSQ-7436', brand: 'Mercedes-Benz', year_fabrication: '2019',
+                              model: 'Sprinter Chassi',freight: '1.840', shipping_company: first_shipping_company)
+    product_model = ProductModel.create!(name: 'Impressora HP' , weight: 4000 , width: 40 , height: 18 , depth: 35,
+                                        sku: 'IMPRESHP9563625' , shipping_company: first_shipping_company) 
+
+    allow(SecureRandom).to receive(:alphanumeric).with(15).and_return('ALTERN123456789') 
+    first_service_order = ServiceOrder.create!(shipping_company: first_shipping_company, vehicle: vehicle, 
+                                                product_model: product_model, estimated_delivery_date: 1.day.from_now)
+
+    allow(SecureRandom).to receive(:alphanumeric).with(15).and_return('ALTERN123451425') 
+    second_service_order = ServiceOrder.create!(shipping_company: first_shipping_company, vehicle: vehicle, 
+                                                product_model: product_model, estimated_delivery_date: 1.day.from_now)
+
+    allow(SecureRandom).to receive(:alphanumeric).with(15).and_return('TRANSP123456789')
+    third_service_order = ServiceOrder.create!(shipping_company: second_shipping_company, vehicle: vehicle, 
+                                                product_model: product_model, estimated_delivery_date: 1.day.from_now)
+    # Act
+    login_as(admin, :scope => :admin)
+    visit root_path
+    fill_in 'Buscar Pedido', with: 'ALTERN'
+    click_on 'Buscar'
+    # Assert
+    expect(page).to have_content('2 pedidos encontrados')
+    expect(page).to have_content('ALTERN123456789')
+    expect(page).to have_content('ALTERN123451425') 
+    expect(page).to have_content 'Transportadora: Alternativa Express LTDA'
+    expect(page).not_to have_content ('TRANSP123456789')
+    expect(page).not_to have_content 'Transportadora: Transportadora Imperial do Brasil LTDA'
+  end
 end

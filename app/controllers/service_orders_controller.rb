@@ -31,7 +31,7 @@ class ServiceOrdersController < ApplicationController
 
   def search
     @code = params["query"]
-    @service_order = ServiceOrder.find_by(code: params["query"])
+    @service_orders = ServiceOrder.where("code LIKE ?", "%#{@code}%")
   end
 
 end
