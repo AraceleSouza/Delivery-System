@@ -14,3 +14,4 @@ pt-BR:
         customer_address: 'Endereço do cliente'
         customer_name: 'Nome do cliente'
         estimated_delivery_date: 'Data prevista para entrega'
+        code: 'Código'

@@ -1,0 +1,15 @@
+<h1>Resultados da Busca por: <%= @code %></h1>
+
+<% if @service_order.present? %>
+  <p>1 pedido encontrado</p>
+  <dl>
+  <dt><%= ServiceOrder.human_attribute_name(:code)%>:</dt>
+  <dd><%= @service_order.code %></dd>
+  <dt><%= ServiceOrder.human_attribute_name(:shipping_company_id)%>:</dt>
+  <dd><%= @service_order.shipping_company.corporate_name %></dd>
+  <dt><%= ServiceOrder.human_attribute_name(:vehicle_id)%>:</dt>
+  <dd><%= @service_order.vehicle.model %></dd>
+  <dt><%= ServiceOrder.human_attribute_name(:product_model_id)%>:</dt>
+  <dd><%= @service_order.product_model.sku %></dd>
+  </dl>
+<% end %>

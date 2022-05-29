@@ -29,4 +29,9 @@ class ServiceOrdersController < ApplicationController
     end
   end
 
+  def search
+    @code = params["query"]
+    @service_order = ServiceOrder.find_by(code: params["query"])
+  end
+
 end
