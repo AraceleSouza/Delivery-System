@@ -3,7 +3,7 @@
   <% if @service_orders.any? %>
     <% @service_orders.each do |order| %>
       <div>
-        <p> <%= order.code %> | <%= t(order.status) %></p>
+        <p> <%= link_to order.code, order %> | <%= t(order.status) %></p>
       </div> 
     <% end %>
   <% else %>
