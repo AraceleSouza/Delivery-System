@@ -21,4 +21,15 @@ describe 'Admin sees their own orders' do
     # Assert
     expect(page).to have_content service_order.code
   end
+
+  it 'and there are no orders registered' do
+    # Arrange 
+    admin = Admin.create!(email: 'aracele@email.com', password: '123789')
+    # Act
+    login_as(admin)
+    visit root_path
+    click_on 'Meus Pedidos'
+    # Arrange 
+    expect(page).to have_content('Não existem ordens de serviço cadastradas.')
+  end
 end
