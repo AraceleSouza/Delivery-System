@@ -1,4 +1,6 @@
 pt-BR:
+  pending: "Pendente"
+  canceled: "Cancelado"
   activerecord:
     models:
       shipping_company: 'Transportadora'
@@ -12,3 +14,4 @@ pt-BR:
         city: 'Cidade'
         state: 'Estado'
         cep: 'CEP'
+        status: 'Situação Atual'

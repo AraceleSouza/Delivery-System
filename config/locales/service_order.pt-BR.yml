@@ -1,7 +1,6 @@
 pt-BR:
-  pending: "Pendente"
-  canceled: "Cancelado"
-  delivered: "Entregue"
+  active: "Ativo"
+  inactive: "Inativo"
   activerecord:
     models:
       service_order:  
