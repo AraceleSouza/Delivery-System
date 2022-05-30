@@ -9,9 +9,7 @@ describe 'Admin manages your account' do
     click_on 'Área Admin'
     fill_in 'E-mail', with: 'aracele@email.com'
     fill_in 'Senha', with: 'password'
-      within('form') do
     click_on 'Entrar'
-    end 
     # Assert
     expect(page).to have_content "Login efetuado com sucesso."
     expect(page).to have_button 'Sair' 
@@ -27,8 +25,8 @@ describe 'Admin manages your account' do
     # Arrange
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Sair'
       # Assert
     expect(page).to have_content 'Logout efetuado com sucesso.'

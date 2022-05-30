@@ -8,14 +8,16 @@
 
     <%= stylesheet_link_tag "application" %>
   </head>
-
   <body>
     <header>
-      <h1> Sistema de Entregas </h1>
+     <%= link_to root_path do %>
+        <h1> Sistema de Entregas </h1>
+      <% end %>
+    
         <nav> 
         <% if !admin_signed_in? && !functionary_signed_in?%>
-        |<%= link_to "Área do Funcionário", new_functionary_session_path %> |
-        <%= link_to "Área Admin", new_admin_session_path %> |
+         |<%= link_to "Área do Funcionário", new_functionary_session_path %> |
+          <%= link_to "Área Admin", new_admin_session_path %> |
         <% end %>
 
         <% if admin_signed_in? %>
@@ -23,11 +25,6 @@
          | <%= link_to 'Transportadoras', shipping_companies_path %> |
            <%= link_to 'Registrar Pedido', new_service_order_path %> |
            <%= link_to 'Meus Pedidos', service_orders_path %> |
-           <%= form_with(url: search_service_orders_path, method: :get) do |f|%>
-              <%= f.label :query, 'Buscar Pedido' %>
-              <%= f.text_field :query %>
-              <%= f.submit 'Buscar' %>
-          <% end %>
           <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
         <% end %>
 
@@ -37,6 +34,14 @@
           <%= button_to "Sair", destroy_functionary_session_path, method: :delete %>
         <% end %>
         </nav>
+
+        <div>
+          <%= form_with(url: search_service_orders_path, method: :get) do |f|%>
+            <%= f.label :query,'Buscar Pedido' %>
+            <%= f.text_field :query %>
+            <%= f.submit 'Buscar' %>
+          <% end %>
+        </div>
     </header>
 
     <main>

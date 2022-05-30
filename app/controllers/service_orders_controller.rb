@@ -1,5 +1,5 @@
 class ServiceOrdersController < ApplicationController 
-  before_action :authenticate_admin!
+  #before_action :authenticate_admin!
 
   def index
     @service_orders = ServiceOrder.all

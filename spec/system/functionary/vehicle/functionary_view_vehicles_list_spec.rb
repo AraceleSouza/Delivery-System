@@ -14,9 +14,8 @@ describe 'Functionary sees vehicles' do
     click_on 'Área do Funcionário'
     fill_in 'E-mail', with: 'juliana@solution.com'
     fill_in 'Senha', with: 'password'
-    within('form') do
-      click_on 'Entrar'
-    end 
+    click_on 'Entrar'
+    
     # Assert
     expect(page).to have_content "Login efetuado com sucesso."
     expect(page).to have_button 'Sair'

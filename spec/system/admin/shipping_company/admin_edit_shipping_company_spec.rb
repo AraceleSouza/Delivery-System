@@ -9,8 +9,8 @@ describe 'User edits a shipping company' do
                             email: 'agendamento@alternativa.com ', cnpj: '43835515000114', 
                             address:'Rua Conde do Pinhal, 56', city: 'Guarulhos', state:'SP', cep:'12369-122' )
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     click_on 'Alternativa Express'
     click_on 'Editar'
@@ -31,8 +31,8 @@ describe 'User edits a shipping company' do
                             email: 'agendamento@alternativa.com ', cnpj: '43835515000114', 
                             address:'Rua Conde do Pinhal, 56', city: 'Guarulhos', state:'SP', cep:'12369-122' )
     # Act
-    visit root_path 
-    login(admin)
+    login_as(admin, :scope => :admin)
+    visit root_path
     click_on 'Transportadoras'
     click_on 'Alternativa Express'
     click_on 'Editar'
@@ -52,8 +52,8 @@ describe 'User edits a shipping company' do
                             email: 'agendamento@alternativa.com ', cnpj: '43835515000114', 
                             address:'Rua Conde do Pinhal, 56', city: 'Guarulhos', state:'SP', cep:'12369-122' )
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     click_on 'Alternativa Express'
     click_on 'Editar'

@@ -9,9 +9,7 @@ describe 'Admin sees list of shipping company' do
     click_on 'Área Admin'
     fill_in 'E-mail', with: 'aracele@email.com'
     fill_in 'Senha', with: 'password'
-      within('form') do
     click_on 'Entrar'
-    end 
     # Assert
     expect(page).to have_content "Login efetuado com sucesso."
     expect(page).to have_button 'Sair' 
@@ -34,8 +32,8 @@ describe 'Admin sees list of shipping company' do
                             email: 'agendamento@alternativa.com ', cnpj: '43835515000114', 
                             address:'Rua Conde do Pinhal, 56', city: 'Guarulhos', state:'SP', cep:'12369-122' )    
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     # Assert
     expect(page).to have_content('Transportadoras')
@@ -50,8 +48,8 @@ describe 'Admin sees list of shipping company' do
     # Arrange 
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     # Arrange 
     expect(page).to have_content('Não existem transportadoras cadastradas.')

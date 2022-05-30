@@ -9,8 +9,8 @@ describe 'Admin sees details of a shipping company' do
                                             address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
                                             state:'BA' , cep: '41180-625' )
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     click_on 'Solution'
     # Assert
@@ -34,8 +34,8 @@ describe 'Admin sees details of a shipping company' do
                         address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
                         state:'BA' , cep: '41180-625' )      
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     click_on 'Solution'
     click_on 'Voltar'

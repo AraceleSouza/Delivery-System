@@ -8,10 +8,8 @@ describe 'Admin searches for an order' do
     login_as(admin, :scope => :admin)
     visit root_path
     # Assert
-    within('header nav') do
-      expect(page).to have_field('Buscar Pedido')
-      expect(page).to have_button('Buscar')
-    end
+    expect(page).to have_field('Buscar Pedido')
+    expect(page).to have_button('Buscar')
   end
 
   it 'and find an order' do

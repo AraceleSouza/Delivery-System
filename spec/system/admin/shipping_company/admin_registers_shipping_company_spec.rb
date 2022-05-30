@@ -5,8 +5,8 @@ describe 'Admin registers a shipping company' do
     # Arrange
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     click_on 'Cadastrar Transportadora'
       # Assert
@@ -24,8 +24,8 @@ describe 'Admin registers a shipping company' do
     # Arrange
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     click_on 'Cadastrar Transportadora'
     fill_in 'Razão Social', with: 'Super Cargas Express LTDA'
@@ -49,8 +49,8 @@ describe 'Admin registers a shipping company' do
     # Arrange
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
     # Act
+    login_as(admin, :scope => :admin)
     visit root_path
-    login(admin)
     click_on 'Transportadoras'
     click_on 'Cadastrar Transportadora'
     fill_in 'Razão Social', with: ''
