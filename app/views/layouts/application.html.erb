@@ -22,15 +22,16 @@
 
         <% if admin_signed_in? %>
           Olá <%= current_admin.email %>
-         | <%= link_to 'Transportadoras', shipping_companies_path %> |
-           <%= link_to 'Registrar Pedido', new_service_order_path %> |
-           <%= link_to 'Meus Pedidos', service_orders_path %> |
+        | <%= link_to 'Transportadoras', shipping_companies_path %> |
+          <%= link_to 'Registrar Pedido', new_service_order_path %> |
+          <%= link_to 'Meus Pedidos', service_orders_path %> |
           <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
         <% end %>
 
         <% if functionary_signed_in? %>
           Olá <%= current_functionary.email %>
-          <%= link_to 'Minha Transportadora', shipping_company_path(current_functionary.shipping_company) %>
+        | <%= link_to 'Minha Transportadora', shipping_company_path(current_functionary.shipping_company) %> | 
+          <%= link_to 'Pedidos', service_orders_path %> |
           <%= button_to "Sair", destroy_functionary_session_path, method: :delete %>
         <% end %>
         </nav>
