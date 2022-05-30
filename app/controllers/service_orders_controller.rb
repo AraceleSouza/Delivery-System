@@ -1,6 +1,5 @@
 class ServiceOrdersController < ApplicationController 
   #before_action :authenticate_admin!
-
   def index
     @service_orders = ServiceOrder.all
   end
@@ -36,4 +35,9 @@ class ServiceOrdersController < ApplicationController
     @service_orders = ServiceOrder.where("code LIKE ?", "%#{@code}%")
   end
 
+  def accept
+    @service_order = ServiceOrder.find(params[:id])
+    @service_order.accept!
+    redirect_to service_order_path(@service_order.id), notice: 'Pedido aceito com sucesso!'
+  end
 end

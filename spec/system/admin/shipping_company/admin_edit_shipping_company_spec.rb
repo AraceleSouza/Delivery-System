@@ -6,7 +6,7 @@ describe 'User edits a shipping company' do
     admin = Admin.create!(email: 'aracele@email.com', password: 'password') 
 
     ShippingCompany.create!(corporate_name: 'Alternativa Express LTDA', fantasy_name: 'Alternativa Express', 
-                            email: 'agendamento@alternativa.com ', cnpj: '43835515000114', 
+                            email: 'agendamento@alternativa.com', cnpj: '43835515000114', 
                             address:'Rua Conde do Pinhal, 56', city: 'Guarulhos', state:'SP', cep:'12369-122' )
     # Act
     login_as(admin, :scope => :admin)

@@ -1,6 +1,6 @@
 pt-BR:
-  pending: "Pendente"
-  canceled: "Cancelado"
+  active: "Ativo"
+  inactive: "Inativo"
   activerecord:
     models:
       shipping_company: 'Transportadora'

@@ -2,9 +2,12 @@
   <h2>Ordens de Serviço</h2>
   <% if @service_orders.any? %>
     <% @service_orders.each do |order| %>
-      <div>
-        <p> <%= link_to order.code, order %> | <%= t(order.status) %></p>
-      </div> 
+      <table>
+        <tr>
+        <th><%= link_to order.code, order %></th> 
+        <td><%= t(order.status) %></td>
+        </tr>
+      </table> 
     <% end %>
   <% else %>
     <p>Não existem ordens de serviço cadastradas.</p>

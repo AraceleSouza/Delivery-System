@@ -42,6 +42,11 @@
     <th><%= ShippingCompany.human_attribute_name(:cep)%>:</th>
     <td><%= @shipping_company.cep %></td>
   </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:status)%>:</th>
+    <td><%= t(@shipping_company.status) %></td>
+  </tr>
+
   </table>
 
 <% if admin_signed_in? %>

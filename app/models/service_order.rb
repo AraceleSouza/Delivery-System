@@ -3,7 +3,7 @@ class ServiceOrder < ApplicationRecord
   belongs_to :vehicle
   belongs_to :product_model
     
-  enum status: { pending: 0, delivered: 5, canceled: 9 }
+  enum status: { pending: 0, accept: 1, delivered: 5, canceled: 9 }
 
   validates :code, :estimated_delivery_date, presence: true 
   validate :estimated_delivery_date_is_future
