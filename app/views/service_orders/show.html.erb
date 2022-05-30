@@ -41,6 +41,9 @@
   <%= button_to "Aceitar", accept_service_order_path(@service_order.id) %>
 </div>
 <div>
+  <%= button_to "Recusar", recused_service_order_path(@service_order.id) %>
+</div>
+<div>
   <%= link_to "Voltar", service_orders_path %>
 </div>
 <% end %>

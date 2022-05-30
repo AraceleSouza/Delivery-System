@@ -40,4 +40,10 @@ class ServiceOrdersController < ApplicationController
     @service_order.accept!
     redirect_to service_order_path(@service_order.id), notice: 'Pedido aceito com sucesso!'
   end
+
+  def recused
+    @service_order = ServiceOrder.find(params[:id])
+    @service_order.recused!
+    redirect_to service_order_path(@service_order.id), notice: 'Pedido recusado com sucesso!'
+  end
 end
