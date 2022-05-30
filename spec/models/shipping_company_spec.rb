@@ -127,17 +127,5 @@ RSpec.describe ShippingCompany, type: :model do
       # Assert
       expect(result).to eq false
     end
-
-    it 'false when cep is invalid' do
-      # Arrange
-      shipping_company = ShippingCompany.new(corporate_name: 'Solution LTDA', fantasy_name: 'Solution', 
-                                                       email: 'transporte@solution.com.br', cnpj: '55385612000163', 
-                                                       address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
-                                                       state:'BA' , cep: '411651' )
-      # Act
-      result = shipping_company.valid?
-      # Assert
-      expect(result).to eq false
-    end
   end
 end

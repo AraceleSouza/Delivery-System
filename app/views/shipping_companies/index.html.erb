@@ -6,10 +6,16 @@
   <h2>Transportadoras</h2>
   <% if @shipping_companies.any? %>
     <% @shipping_companies.each do |s| %>
-      <div>
-        <p><%= ShippingCompany.model_name.human %>: <%= link_to(s.fantasy_name, shipping_company_path(s.id))%> |
-         <%= ShippingCompany.human_attribute_name(:cnpj)%>: <%= s.cnpj %></p>
-      </div> 
+      <table>
+        <tr>
+          <td><%= ShippingCompany.model_name.human %>: </td>
+          <th><%= link_to(s.fantasy_name, shipping_company_path(s.id))%></th>
+        </tr>
+        <tr>
+          <td><%= ShippingCompany.human_attribute_name(:cnpj)%>:</td>
+          <th><%= s.cnpj %> </th>
+        </tr>
+      </table>
     <% end %>
   <% else %>
     <p>Não existem transportadoras cadastradas.</p>

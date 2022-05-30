@@ -8,17 +8,41 @@
 
 <%= link_to('Produtos', shipping_company_product_models_path(@shipping_company.id))%>
 
-<h2>Detalhes da transportadora: </h2>
-  <div>
-    <strong><%= ShippingCompany.human_attribute_name(:fantasy_name)%>:</strong> <%= @shipping_company.fantasy_name %><br>
-    <strong><%= ShippingCompany.human_attribute_name(:corporate_name)%>:</strong> <%= @shipping_company.corporate_name %><br>
-    <strong><%= ShippingCompany.human_attribute_name(:cnpj)%>:</strong> <%= @shipping_company.cnpj %><br>
-    <strong><%= ShippingCompany.human_attribute_name(:email)%>:</strong> <%= @shipping_company.email %><br>
-    <strong><%= ShippingCompany.human_attribute_name(:address)%>:</strong> <%= @shipping_company.address %><br>
-    <strong><%= ShippingCompany.human_attribute_name(:city)%>:</strong> <%= @shipping_company.city %><br>
-    <strong><%= ShippingCompany.human_attribute_name(:state)%>:</strong> <%= @shipping_company.state %><br>
-    <strong><%= ShippingCompany.human_attribute_name(:cep)%>:</strong> <%= @shipping_company.cep %>
-  </div>
+<h2>Detalhes da Transportadora: </h2>
+  <table>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:fantasy_name)%>:</th>
+    <td><%= @shipping_company.fantasy_name %></td>
+  </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:corporate_name)%>:</th>
+    <td><%= @shipping_company.corporate_name %></td>
+  </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:cnpj)%>:</th>
+    <td><%= @shipping_company.cnpj %></td>
+  </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:email)%>:</th>
+    <td><%= @shipping_company.email %></td>
+  </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:address)%>:</th>
+    <td><%= @shipping_company.address %></td>
+  </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:city)%>:</th>
+    <td><%= @shipping_company.city %></td>
+  </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:state)%>:</th>
+    <td><%= @shipping_company.state %></td>
+  </tr>
+  <tr>
+    <th><%= ShippingCompany.human_attribute_name(:cep)%>:</th>
+    <td><%= @shipping_company.cep %></td>
+  </tr>
+  </table>
 
 <% if admin_signed_in? %>
   <div>

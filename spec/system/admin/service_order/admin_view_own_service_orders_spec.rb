@@ -56,4 +56,5 @@ describe 'Admin sees their own orders' do
     expect(page).to have_content 'Transportadora: Alternativa Express LTDA'
     expect(page).to have_content 'Veículo: Sprinter Chassi'
   end
+
 end

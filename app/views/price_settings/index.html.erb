@@ -1,8 +1,7 @@
-<div>
-  <%= link_to 'Cadastrar Preço', new_shipping_company_price_setting_path %> 
-</div>
-
 <section>
+  <div>
+    <%= link_to 'Cadastrar Preço', new_shipping_company_price_setting_path %> 
+  </div>
   <h2>Tabela de Preço:</h2>
   <% if @price_settings.any? %>
     <table>
@@ -38,5 +37,9 @@
       </tbody>
     </table>
   <% end %>
+  <div>
+  <%= link_to 'Voltar', shipping_company_path(@shipping_company.id) %> 
+  </div>
 </section>
+
 

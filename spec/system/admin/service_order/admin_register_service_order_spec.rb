@@ -29,7 +29,7 @@ describe 'Admin register an order' do
     select shipping_company.corporate_name, from: 'Transportadora'
     select vehicle.model, from: 'Veículo'
     select product_model.sku, from: 'Produto'
-    fill_in 'Endereço completo para retirada', with: 'Rua das Flores, 100 - São Paulo - SP - CEP: 12255-360'
+    fill_in 'Endereço para retirada', with: 'Rua das Flores, 100 - São Paulo - SP - CEP: 12255-360'
     fill_in 'Endereço do cliente', with: 'Avenida do Museu do Amanhã, 1000 - Rio de Janeiro - RJ - CEP: 20100-000'
     fill_in 'Nome do cliente', with: 'Mariana da Silva'
     fill_in 'Data prevista para entrega', with: '05/10/2022'

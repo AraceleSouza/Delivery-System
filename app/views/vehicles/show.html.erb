@@ -1,8 +1,27 @@
 <h2><%= Vehicle.model_name.human %></h2>
+<table border="1">
+<tr>
+  <th><%= Vehicle.human_attribute_name(:model)%>:</th>
+  <td><%= @vehicle.model %></td>
+</tr>
+<tr>
+  <th><%= Vehicle.human_attribute_name(:brand)%>:</th>
+  <td><%= @vehicle.brand %></td>
+</tr>
+<tr>
+  <th><%= Vehicle.human_attribute_name(:plate)%>:</th>
+  <td><%= @vehicle.plate %></td>
+</tr>
+<tr>
+  <th><%= Vehicle.human_attribute_name(:year_fabrication)%>:</th>
+  <td><%= @vehicle.year_fabrication %></td>
+</tr>
+<tr>
+  <th><%= Vehicle.human_attribute_name(:freight)%>:</th>
+  <td><%= @vehicle.freight %> kg</td>
+</tr>
+</table>
+
 <div>
-  <strong><%= Vehicle.human_attribute_name(:model)%>:</strong> <%= @vehicle.model %><br>
-  <strong><%= Vehicle.human_attribute_name(:brand)%>:</strong> <%= @vehicle.brand %><br>
-  <strong><%= Vehicle.human_attribute_name(:plate)%>:</strong> <%= @vehicle.plate %><br>
-  <strong><%= Vehicle.human_attribute_name(:year_fabrication)%>:</strong> <%= @vehicle.year_fabrication %><br>
-  <strong><%= Vehicle.human_attribute_name(:freight)%>:</strong> <%= @vehicle.freight %> kg<br>
+  <%= link_to 'Voltar', shipping_company_vehicles_path %> 
 </div>

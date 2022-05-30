@@ -15,7 +15,7 @@ pt-BR:
         vehicle: 'Veículo'
         product_model_id: 'Produto'
         product_model: 'Produto'
-        full_address: 'Endereço completo para retirada'
+        full_address: 'Endereço para retirada'
         customer_address: 'Endereço do cliente'
         customer_name: 'Nome do cliente'
         estimated_delivery_date: 'Data prevista para entrega'

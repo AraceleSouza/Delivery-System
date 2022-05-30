@@ -14,8 +14,8 @@
       <h1> Sistema de Entregas </h1>
         <nav> 
         <% if !admin_signed_in? && !functionary_signed_in?%>
-          <%= link_to "Área do Funcionário", new_functionary_session_path %> 
-          <%= link_to "Área Admin", new_admin_session_path %>
+        |<%= link_to "Área do Funcionário", new_functionary_session_path %> |
+        <%= link_to "Área Admin", new_admin_session_path %> |
         <% end %>
 
         <% if admin_signed_in? %>

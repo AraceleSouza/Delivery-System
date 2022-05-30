@@ -3,7 +3,7 @@ class ShippingCompany < ApplicationRecord
 
     has_many :vehicles
     has_many :functionaries  
-    has_many :price_settings
+  
 
 
     validates :corporate_name, :fantasy_name, :email, :cnpj , :address, :city, :state, :cep, presence: true

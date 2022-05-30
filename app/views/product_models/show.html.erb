@@ -1,9 +1,30 @@
 <h2><%= ProductModel.model_name.human %></h2>
+<table border="1">
+  <tr>
+    <th><%= ProductModel.human_attribute_name(:name)%>:</th>
+    <td><%= @product_model.name %></td>
+  </tr>
+  <tr>
+    <th><%= ProductModel.human_attribute_name(:weight)%>:</th>
+    <td><%= @product_model.weight %></td>
+  </tr>
+  <tr>
+    <th><%= ProductModel.human_attribute_name(:width)%>:</th>
+    <td><%= @product_model.width %></td>
+  </tr>
+  <tr>
+    <th><%= ProductModel.human_attribute_name(:height)%>:</th>
+    <td><%= @product_model.height %></td>
+  </tr>
+  <tr>
+    <th><%= ProductModel.human_attribute_name(:depth)%>:</th>
+    <td><%= @product_model.depth %></td>
+  </tr>
+  <tr>
+    <th><%= ProductModel.human_attribute_name(:sku)%>:</th>
+    <td><%= @product_model.sku %> </td>
+  </tr>
+</table>
 <div>
-  <strong><%= ProductModel.human_attribute_name(:name)%>:</strong> <%= @product_model.name %><br>
-  <strong><%= ProductModel.human_attribute_name(:weight)%>:</strong> <%= @product_model.weight %><br>
-  <strong><%= ProductModel.human_attribute_name(:width)%>:</strong> <%= @product_model.width %><br>
-  <strong><%= ProductModel.human_attribute_name(:height)%>:</strong> <%= @product_model.height %><br>
-  <strong><%= ProductModel.human_attribute_name(:depth)%>:</strong> <%= @product_model.depth %><br>
-  <strong><%= ProductModel.human_attribute_name(:sku)%>:</strong> <%= @product_model.sku %> <br>
+  <%= link_to 'Voltar', shipping_company_product_models_path %> 
 </div>

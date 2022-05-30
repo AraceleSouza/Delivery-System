@@ -1,15 +1,38 @@
 <h1>Detalhes do Pedido:</h1>
+
+<table>
 <h2><%= ServiceOrder.model_name.human %>: <%= @service_order.code %></h2>
-<dl>
-  <dt><%= ServiceOrder.human_attribute_name(:shipping_company_id)%>:</dt> 
-  <dd><%= @service_order.shipping_company.corporate_name %></dd>
-  <dt><%= ServiceOrder.human_attribute_name(:vehicle_id)%>:</dt> 
-  <dd><%= @service_order.vehicle.model %></dd>
-  <dt><%= ServiceOrder.human_attribute_name(:product_model_id)%>:</dt> 
-  <dd><%= @service_order.product_model.sku %></dd>
-  <dt><%= ServiceOrder.human_attribute_name(:estimated_delivery_date)%>:</dt> 
-  <dd><%= I18n.localize(@service_order.estimated_delivery_date) %></dd>
-  <dt><%= ServiceOrder.human_attribute_name(:status)%>:</dt> 
-  <dd><%= t(@service_order.status) %></dd>
-</dl>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:shipping_company_id)%>:</th> 
+  <td><%= @service_order.shipping_company.corporate_name %></td>
+</tr>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:vehicle_id)%>:</th> 
+  <td><%= @service_order.vehicle.model %></td>
+</tr>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:product_model_id)%>:</th>
+  <td><%= @service_order.product_model.sku %></td>
+</tr>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:full_address)%>:</th>
+  <td><%= (@service_order.full_address) %></td>
+</tr>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:customer_address)%>:</th> 
+  <td><%= (@service_order.customer_address) %></td>
+</tr>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:customer_name)%>:</th> 
+  <td><%= (@service_order.customer_name) %></td>
+</tr>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:estimated_delivery_date)%>:</th> 
+  <td><%= I18n.localize(@service_order.estimated_delivery_date) %></td>
+</tr>
+<tr>
+  <th><%= ServiceOrder.human_attribute_name(:status)%>:</th>
+  <td><%= t(@service_order.status) %></td>
+</tr>
+</table>
 

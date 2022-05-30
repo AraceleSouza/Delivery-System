@@ -56,8 +56,10 @@ describe 'Functionary sees vehicles' do
                                               state:'BA' , cep: '41180-625' )
     functionary = Functionary.create!(email: 'juliana@solution.com', password: 'password', 
                                       shipping_company: shipping_company)
-    Vehicle.create!(plate: 'HMG-0248', brand: 'Fiat', year_fabrication: '2021',model: 'Ducato',freight: '3750', shipping_company: shipping_company)
-    Vehicle.create!(plate: 'JSQ-7436', brand: 'Mercedes-Benz', year_fabrication: '2019',model: 'Sprinter Chassi',freight: '1.840', shipping_company: shipping_company)
+    Vehicle.create!(plate: 'HMG-0248', brand: 'Fiat', year_fabrication: '2021',model: 'Ducato',
+                    freight: '3750', shipping_company: shipping_company)
+    Vehicle.create!(plate: 'JSQ-7436', brand: 'Mercedes-Benz', year_fabrication: '2019',model: 'Sprinter Chassi',
+                    freight: '1.840', shipping_company: shipping_company)
     # Act
     login_as(functionary)
     visit root_path
@@ -94,5 +96,40 @@ describe 'Functionary sees vehicles' do
     click_on 'Veículos'
     # Arrange 
     expect(page).to have_content('Não existem veículos cadastrados.')
+  end
+
+  it 'only from your shipping_company' do
+    # Arrange
+    first_shipping_company = ShippingCompany.create!(corporate_name: 'Solution LTDA', fantasy_name: 'Solution', 
+                                                      email: 'transporte@solution.com', cnpj: '55385612000163', 
+                                                      address:'Travessa Leopoldino Tantú, 138', city: 'Salvador', 
+                                                      state:'BA' , cep: '41180-625' )
+
+    second_shipping_company = ShippingCompany.create!(corporate_name: 'Transportadora Imperial do Brasil LTDA', 
+                                                      fantasy_name: 'Transportadora Imperial',
+                                                      email: 'contato@transportadoraimperial.com', 
+                                                      cnpj: '62325611000167', address:'Av das Flores, 108', 
+                                                      city: 'Cajamar', state:'SP' , cep: '12536-100' )
+
+    functionary = Functionary.create!(email: 'juliana@solution.com', password: 'password', 
+                                      shipping_company: first_shipping_company )
+
+    Vehicle.create!(plate: 'HMG-0248', brand: 'Fiat', year_fabrication: '2021',
+                                    model: 'Ducato', freight: '3750', shipping_company: first_shipping_company)
+    Vehicle.create!(plate: 'JSQ-7436', brand: 'Mercedes-Benz', year_fabrication: '2019',
+                                    model: 'Sprinter Chassi', freight: '1.840', 
+                                    shipping_company: second_shipping_company )
+    Vehicle.create!(plate: 'JDR-0312', brand: 'Ford', year_fabrication: '2006',
+                                    model: 'Cargo 2422', freight: '23000', 
+                                    shipping_company: first_shipping_company )
+    # Act
+    login_as(functionary)
+    visit root_path
+    click_on 'Minha Transportadora'
+    click_on 'Veículos'
+    # Assert
+    expect(page).to have_content 'Modelo: Ducato'
+    expect(page).to have_content 'Modelo: Cargo 2422'
+    expect(page).not_to have_content 'Modelo: Sprinter Chassi'
   end
 end

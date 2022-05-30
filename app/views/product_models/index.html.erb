@@ -1,20 +1,27 @@
-
 <section>
 <% if admin_signed_in? %>
   <div>
     <%= link_to('Cadastrar Produto', new_shipping_company_product_model_path)%>
   </div>
  <% end %>
- 
   <h2>Modelos de Produtos</h2>
   <% if @product_models.any? %>
     <% @product_models.each do |product| %>
-      <div>
-        <p><%= ProductModel.human_attribute_name(:name)%>: <%= product.name %> | 
-        <%= ProductModel.human_attribute_name(:sku)%>: <%= link_to product.sku, shipping_company_product_model_path(@shipping_company.id, product.id) %></p>
-      </div> 
+      <table>
+      <tr>
+        <th><%= ProductModel.human_attribute_name(:name)%>: </th>
+        <td><%= product.name %></td>
+      </tr>
+      <tr>
+        <th><%= ProductModel.human_attribute_name(:sku)%>: </th>
+        <td><%= link_to product.sku, shipping_company_product_model_path(@shipping_company.id, product.id) %> </td>
+      </tr>
+      </table> 
     <% end %>
   <% else %>
     <p>Não existem modelos de produtos cadastrados.</p>
   <% end %>
+  <div>
+  <%= link_to 'Voltar', shipping_company_path(@shipping_company.id) %> 
+  </div>
 </section>
