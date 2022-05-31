@@ -51,7 +51,7 @@ class ShippingCompaniesController < ApplicationController
 
   private
 
-  
+
   def shipping_company_params
     params.require(:shipping_company).permit(:corporate_name, :fantasy_name, :email, 
     :cnpj , :address, :city, :state, :cep)

@@ -12,7 +12,7 @@ class ServiceOrdersController < ApplicationController
     @service_order = ServiceOrder.new
     @shipping_companies = ShippingCompany.all
     @vehicles = Vehicle.all
-    @product_models = ProductModel.all
+    @product_models = ProductModel.all  
   end
 
   def create
