@@ -36,14 +36,12 @@
 </tr>
 </table>
 
+<div>
 <% if functionary_signed_in? %>
-<div>
-  <%= button_to "Aceitar", accept_service_order_path(@service_order.id) %>
-</div>
-<div>
-  <%= button_to "Recusar", recused_service_order_path(@service_order.id) %>
-</div>
-<div>
+  <% if @service_order.pending? %>
+    <%= button_to "Aceitar", accept_service_order_path(@service_order.id) %>
+    <%= button_to "Recusar", recused_service_order_path(@service_order.id) %>
+  <% end %>
   <%= link_to "Voltar", service_orders_path %>
 </div>
 <% end %>
