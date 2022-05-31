@@ -51,7 +51,10 @@
 
 <% if admin_signed_in? %>
   <div>
-    <%= link_to 'Voltar', shipping_companies_path %> | <%= link_to('Editar', edit_shipping_company_path(@shipping_company.id))%>
+    <%= link_to('Voltar', shipping_companies_path) %> | 
+    <%= link_to('Editar', edit_shipping_company_path(@shipping_company.id))%> |
+    <%= button_to('Ativar', active_shipping_company_path(@shipping_company.id)) %>
+    <%= button_to('Desativar', inactive_shipping_company_path(@shipping_company.id)) %>
   </div>
 <% end %>
 

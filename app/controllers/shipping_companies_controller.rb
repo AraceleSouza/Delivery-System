@@ -37,6 +37,18 @@ class ShippingCompaniesController < ApplicationController
     end
   end
 
+  def active
+    @shipping_company = ShippingCompany.find(params[:id])
+    @shipping_company.active!
+    redirect_to shipping_company_path(@shipping_company.id), notice: 'Transportadora ativada com sucesso!'
+  end
+
+  def inactive
+    @shipping_company = ShippingCompany.find(params[:id])
+    @shipping_company.inactive!
+    redirect_to shipping_company_path(@shipping_company.id), notice: 'Transportadora desativada com sucesso!'
+  end
+
   private
 
   
