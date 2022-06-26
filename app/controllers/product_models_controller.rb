@@ -1,7 +1,7 @@
 class ProductModelsController < ApplicationController 
   def index
     @shipping_company = ShippingCompany.find(params[:shipping_company_id])
-    @product_models = ProductModel.all
+    @product_models = @shipping_company.product_models
   end
 
   def show
