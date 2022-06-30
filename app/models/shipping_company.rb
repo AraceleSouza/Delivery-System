@@ -3,7 +3,10 @@ class ShippingCompany < ApplicationRecord
     enum status: { active: 0, inactive: 5 }
     
     has_many :vehicles
-    has_many :functionaries  
+    has_many :functionaries
+    has_many :price_settings
+    has_many :product_models
+    has_many :service_orders
      
 
     validates :corporate_name, :fantasy_name, :email, :cnpj , :address, :city, :state, :cep, presence: true

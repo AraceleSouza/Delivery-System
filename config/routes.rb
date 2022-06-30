@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :service_orders, only: [:index, :new, :create, :show, :edit, :update] do
     get 'search', on: :collection
     post'accept', on: :member
-    post'recused', on: :member  
+    post'recused', on: :member   
   end
 end

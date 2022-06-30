@@ -10,12 +10,12 @@ class ServiceOrdersController < ApplicationController
 
   def new
     @service_order = ServiceOrder.new
-    @shipping_companies = ShippingCompany.all
+    @shipping_companies = ShippingCompany.all    
     @vehicles = Vehicle.all
     @product_models = ProductModel.all  
   end
 
-  def create
+  def create    
     service_order_params = params.require(:service_order).permit(:shipping_company_id, :vehicle_id, :product_model_id, :full_address, 
                                                         :customer_address, :customer_name, :estimated_delivery_date, :status)
     @service_order = ServiceOrder.new(service_order_params)
@@ -46,4 +46,5 @@ class ServiceOrdersController < ApplicationController
     @service_order.recused!
     redirect_to service_order_path(@service_order.id), notice: 'Pedido recusado com sucesso!'
   end
+
 end

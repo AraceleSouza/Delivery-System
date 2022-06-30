@@ -5,7 +5,7 @@ describe 'Admin register an order' do
     # Arrange
     admin = Admin.create!(email: 'aracele@email.com', password: 'password')
 
-    ShippingCompany.create(corporate_name: 'Transportadora Imperial do Brasil LTDA', fantasy_name: 'Transportadora Imperial', 
+    ShippingCompany.create!(corporate_name: 'Transportadora Imperial do Brasil LTDA', fantasy_name: 'Transportadora Imperial', 
                             email: 'contato@transportadoraimperial.com', cnpj: '62325611000167', 
                             address:'Av das Flores, 108', city: 'Cajamar', state:'SP' , cep: '12536-100' )
     shipping_company = ShippingCompany.create!(corporate_name: 'Alternativa Express LTDA', fantasy_name: 'Alternativa Express', 
