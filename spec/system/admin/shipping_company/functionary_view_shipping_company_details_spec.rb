@@ -13,8 +13,8 @@ describe 'Functionary sees details of your shipping company' do
     visit root_path
     click_on 'Minha Transportadora'
     # Assert
-    expect(page).to have_content 'Razão Social: Solution LTDA'
     expect(page).to have_content 'Nome Fantasia: Solution'
+    expect(page).to have_content 'Razão Social: Solution LTDA'
     expect(page).to have_content 'E-mail: transporte@solution.com'
     expect(page).to have_content 'CNPJ: 55385612000163'
     expect(page).to have_content 'Endereço: Travessa Leopoldino Tantú, 138'  

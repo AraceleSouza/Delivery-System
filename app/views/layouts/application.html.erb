@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application" %>
   </head>
   <body>
@@ -32,6 +31,9 @@
           Olá <%= current_functionary.email %>
         | <%= link_to 'Minha Transportadora', shipping_company_path(current_functionary.shipping_company) %> | 
           <%= link_to 'Pedidos', service_orders_path %> |
+          <%= link_to 'Veículos', shipping_company_vehicles_path(current_functionary.shipping_company) %> | 
+          <%= link_to 'Tabela de Preços', shipping_company_price_settings_path(current_functionary.shipping_company) %> |
+          <%= link_to 'Prazos de Entrega', shipping_company_deadlines_path(current_functionary.shipping_company) %> |
           <%= button_to "Sair", destroy_functionary_session_path, method: :delete %>
         <% end %>
         </nav>
