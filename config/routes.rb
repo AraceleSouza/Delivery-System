@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post'inactive', on: :member
   end
   resources :service_orders, only: [:index, :new, :create, :show, :edit, :update] do
+    resources :delivery_routes, only: [:new, :create] 
     get 'search', on: :collection
     post'accept', on: :member
     post'recused', on: :member   

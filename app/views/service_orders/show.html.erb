@@ -36,14 +36,39 @@
 </tr>
 </table>
 
+<br>
+<h3>RASTREAMENTO</h3>
+<p>Objeto em trânsito - por favor aguarde</p>
+
 <div>
 <% if functionary_signed_in? %>
+
   <% if @service_order.pending? %>
     <%= button_to "Aceitar", accept_service_order_path(@service_order.id) %>
     <%= button_to "Recusar", recused_service_order_path(@service_order.id) %>
   <% end %>
   <%= link_to "Voltar", service_orders_path %>
-</div>
+  <%= link_to "Atualizar rota", new_service_order_delivery_route_path(service_order_id: @service_order.id) %>
 <% end %>
+</div>
 
+<div>
+  <% @service_order.delivery_route.each do |f|%>
+    <table>
+    <tr>
+      <th><%= DeliveryRoute.human_attribute_name(:current_address)%>:</th>
+      <td><%= f.current_address %></td>
+    </tr>
+    <tr>
+      <th><%= DeliveryRoute.human_attribute_name(:exit_address)%>:</th>
+      <td><%= f.exit_address %></td>
+    </tr>
+    <tr>
+      <th><%= DeliveryRoute.human_attribute_name(:current_date)%>:</th>
+      <td><%= f.current_date %></td>
+    </tr> 
+    </table>
+    <br>
+  <% end %>
+<div>
 

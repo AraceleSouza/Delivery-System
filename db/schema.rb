@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_30_172639) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_01_002951) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -31,6 +31,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_172639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shipping_company_id"], name: "index_deadlines_on_shipping_company_id"
+  end
+
+  create_table "delivery_routes", force: :cascade do |t|
+    t.date "estimated_delivery_date"
+    t.string "current_address"
+    t.string "exit_address"
+    t.integer "service_order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "current_date"
+    t.index ["service_order_id"], name: "index_delivery_routes_on_service_order_id"
   end
 
   create_table "functionaries", force: :cascade do |t|
@@ -117,6 +128,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_172639) do
   end
 
   add_foreign_key "deadlines", "shipping_companies"
+  add_foreign_key "delivery_routes", "service_orders"
   add_foreign_key "functionaries", "shipping_companies"
   add_foreign_key "price_settings", "shipping_companies"
   add_foreign_key "product_models", "shipping_companies"

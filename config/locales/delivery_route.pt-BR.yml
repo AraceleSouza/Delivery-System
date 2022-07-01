@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      delivery_route: 'Rota de entrega'
+    attributes:
+      delivery_route:
+        estimated_delivery_date: 'Data prevista para entrega'
+        current_address: 'Endereço atual'
+        exit_address: 'Endereço de saída'
+        current_date: 'Data'
+        

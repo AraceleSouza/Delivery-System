@@ -2,6 +2,7 @@ class ServiceOrder < ApplicationRecord
   belongs_to :shipping_company
   belongs_to :vehicle
   belongs_to :product_model
+  has_many :delivery_route
     
   enum status: { pending: 0, accept: 1, recused:2, delivered: 5, canceled: 9 }
 

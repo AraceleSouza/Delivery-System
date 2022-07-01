@@ -1,0 +1,23 @@
+<h2>Atualizar Rota de Entrega</h2>
+
+<%= form_with(model: [@service_order, @delivery_route]) do |f| %>
+  <div>
+    <%= f.label :exit_address %>
+    <%= f.text_area :exit_address %>
+  </div>
+
+  <div>
+    <%= f.label :current_address %>
+    <%= f.text_area :current_address %>
+  </div>
+
+  <div>
+    <%= f.label :current_date %>
+    <%= f.date_field :current_date %>
+  </div>
+
+  <div>
+    <%= f.submit 'Gravar'%>
+  </div>
+
+<% end %>
