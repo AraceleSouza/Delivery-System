@@ -13,6 +13,10 @@ class DeliveryRoutesController < ApplicationController
     @delivery_route.service_order = @service_order
     if @delivery_route.save
       redirect_to @service_order, notice: 'Rota atualizada com sucesso.'
+    else
+      @service_orders = ServiceOrder.all
+      flash.now[:notice] = "Rota não cadastrada."
+      render 'new'
     end
   end
 end

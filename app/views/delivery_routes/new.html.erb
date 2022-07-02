@@ -1,5 +1,14 @@
 <h2>Atualizar Rota de Entrega</h2>
 
+<% if (@delivery_route.errors.any?) %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @delivery_route.errors.full_messages.each do |msg| %>
+    <li><%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with(model: [@service_order, @delivery_route]) do |f| %>
   <div>
     <%= f.label :exit_address %>
